@@ -12,6 +12,42 @@ Raw (i.e. unprocessed, has not been reduced or altered in any way) data for each
 All downloads of Facebook, plus Instagram or Twitter if they have them lives in P:\studydata\face\data\encrypted\raw
 * This data is stored SEPARATELY from all other study data to protect data privacy
 * This data is labeled as the subjects Social Media ID number (SMID), which is a randomly generated 6 digit number.
+**Data cleaning notes:**
+
+# #Empty folder?
+# SMIDs = SMIDs[-which(SMIDs==706424)]
+# 
+# #No Facebook? Other SM data present
+# SMIDs = SMIDs[-which(SMIDs==808900)]
+# SMIDs = SMIDs[-which(SMIDs==169655)]
+
+
+#Correct duplicates
+#Peter incorrectly entered 026 as 029 on Friday 6/8
+#the second one is the one that needs to be changed
+
+#maggie said both participant were 325, the second one is acutally 320
+
+
+## Unzipping problems ###
+#Remove files that are unable to be extracted atm
+BadSMIDs = c(706424, 398020, 701927, 145406, 114589, 434728, 808900, 169655, 138929, 398220) 
+SMIDs = SMIDs[-which(SMIDs %in% BadSMIDs)]
+#706424 -- missing Social media?  FB is for sure gone (never came into download resched) but session form indicates insta download 
+#398220 only photos and videos 10/26/2018
+#701927 only photos and vids 10.26.18
+#145406 only photos and videos 10/31/2018
+#114589 only photo and vids 10/30/18
+#434728 only photos and vids  10.31.2018
+#913773 19 items...probably ok? keep an eye on for processing. 11.2.2018
+#141890 19 items 11.14.2018 keep
+#988738 - 18 items 2.1.2019 keep
+#582911 17 items 2.1.2019 -- this likely looks like someone who doesn't use FB that much and potentially
+#deleted their messages before coming in. Keep?
+#808900 - No Facebook 11.8.2018
+#169655 No FB 11.16.2018
+#138929 just messages 1.24.2019
+
 
 ### Individual subject raw data
 SCID recordings, graduate clinican scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:\studydata\face\data_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047). Every subject folder should include:
@@ -38,6 +74,7 @@ File listing all past month binge drinking days reported during the timeline fol
 File of the graduate clinician (Sarah Sant'Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).
 **Data cleaning notes:**
 * 93 scids need to be scored by Sarah still. None of these have new scid or scid review files (as expected for new scids)
+* First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to aviod later confusion (it is 6 times in last 12 months)
 
 **Other files that MAY exist in raw data subject folders include:**
 
@@ -63,7 +100,10 @@ RA scoring of SCIDs in session
 
 
 ## SCID data
+SCID data is cleaned by compiliing qualtrics data and SS data, making updates to RA scores using _New SCID files, and data cleaning as detailed in mak_scid.rmd. Relevant data cleaning issues include:
 
+### SCID scoring
+Descrepancies exist in raw files on the use of 0/1 vs 1/3 for symptom ratings. Clinicially, responses to questions may be listed as 
 
 
 
