@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -140,7 +140,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#study-folders-and-files" id="toc-study-folders-and-files" class="nav-link active" data-scroll-target="#study-folders-and-files"><span class="header-section-number">1.1</span> Study folders and files</a></li>
+  <li><a href="#study-folders-and-files" id="toc-study-folders-and-files" class="nav-link active" data-scroll-target="#study-folders-and-files"><span class="header-section-number">1.1</span> Study folders and files</a>
+  <ul class="collapse">
+  <li><a href="#raw-social-media-data" id="toc-raw-social-media-data" class="nav-link" data-scroll-target="#raw-social-media-data"><span class="header-section-number">1.1.1</span> Raw social media data</a></li>
+  <li><a href="#individual-subject-raw-data" id="toc-individual-subject-raw-data" class="nav-link" data-scroll-target="#individual-subject-raw-data"><span class="header-section-number">1.1.2</span> Individual subject raw data</a></li>
+  <li><a href="#aggregate-session-data-collected-in-qualtrics" id="toc-aggregate-session-data-collected-in-qualtrics" class="nav-link" data-scroll-target="#aggregate-session-data-collected-in-qualtrics"><span class="header-section-number">1.1.3</span> Aggregate session data collected in qualtrics</a></li>
+  </ul></li>
   <li><a href="#scid-data" id="toc-scid-data" class="nav-link" data-scroll-target="#scid-data"><span class="header-section-number">1.2</span> SCID data</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/notes_face/edit/main/general_cleaning.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -168,6 +173,58 @@ ul.task-list li input[type="checkbox"] {
 <p>these are notes</p>
 <section id="study-folders-and-files" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="study-folders-and-files"><span class="header-section-number">1.1</span> Study folders and files</h2>
+<p>Raw (i.e.&nbsp;unprocessed, has not been reduced or altered in any way) data for each participant lives in THREE locations:</p>
+<ul>
+<li><ol type="1">
+<li>raw social media data in “P:”</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Individual subject raw data in “P:_raw”, stored in separate folders labeled with SubID numbers</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Aggregate subject data (collected in qualtrics) in the root of “P:_raw”</li>
+</ol></li>
+</ul>
+<section id="raw-social-media-data" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="raw-social-media-data"><span class="header-section-number">1.1.1</span> Raw social media data</h3>
+<p>All downloads of Facebook, plus Instagram or Twitter if they have them lives in P: * This data is stored SEPARATELY from all other study data to protect data privacy * This data is labeled as the subjects Social Media ID number (SMID), which is a randomly generated 6 digit number.</p>
+</section>
+<section id="individual-subject-raw-data" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="individual-subject-raw-data"><span class="header-section-number">1.1.2</span> Individual subject raw data</h3>
+<p>SCID recordings, graduate clinican scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047). Every subject folder should include:</p>
+<section id="scid.wav-an-audio-recording-of-the-scid-administered-during-the-study-visit-used-for-label-validation" class="level4" data-number="1.1.2.1">
+<h4 data-number="1.1.2.1" class="anchored" data-anchor-id="scid.wav-an-audio-recording-of-the-scid-administered-during-the-study-visit-used-for-label-validation"><span class="header-section-number">1.1.2.1</span> _SCID.wav: an audio recording of the SCID administered during the study visit (used for label validation)</h4>
+<p><strong>Data cleaning notes:</strong></p>
+<ul>
+<li><p>SubID 471 had a study folder and existed in our qualtrics data, but no SCID data or other data was inside of the folder. SS reviewed session notes and identified that this subject did not complete the session. Their folder was permanently deleted from raw data 01/2024.</p></li>
+<li><p>3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels</p>
+<ul>
+<li>092 has note in data_raw stating recording was forgotten. _SS file is currently a copy of the RA review – should it be missing?</li>
+<li>412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)</li>
+</ul></li>
+</ul>
+</section>
+<section id="tlfb.csv-a-file-listing-all-past-month-binge-drinking-days-reported-during-the-timeline-follow-back-completed-in-session.-paper-copies-of-the-timeline-followback-exist-in-the-locked-study-file-cabinet." class="level4" data-number="1.1.2.2">
+<h4 data-number="1.1.2.2" class="anchored" data-anchor-id="tlfb.csv-a-file-listing-all-past-month-binge-drinking-days-reported-during-the-timeline-follow-back-completed-in-session.-paper-copies-of-the-timeline-followback-exist-in-the-locked-study-file-cabinet."><span class="header-section-number">1.1.2.2</span> _TLFB.csv: a file listing all past month binge drinking days reported during the timeline follow-back completed in session. Paper copies of the timeline followback exist in the locked study file cabinet.</h4>
+<p>####_SCID_SS.csv: a file of the graduate clinician (Sarah Sant’Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).</p>
+<p>Other files that MAY exist in raw data subject folders include:</p>
+<ul>
+<li></li>
+</ul>
+</section>
+</section>
+<section id="aggregate-session-data-collected-in-qualtrics" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="aggregate-session-data-collected-in-qualtrics"><span class="header-section-number">1.1.3</span> Aggregate session data collected in qualtrics</h3>
+<p>Qualtrics data is downloaded from qualtrics and stored as csv files in the root of P:_raw. Qualtrics data includes:</p>
+<section id="qualtrics_id_battery.csv" class="level4" data-number="1.1.3.1">
+<h4 data-number="1.1.3.1" class="anchored" data-anchor-id="qualtrics_id_battery.csv"><span class="header-section-number">1.1.3.1</span> qualtrics_id_battery.csv</h4>
+<p>Participants completion of study questionnaires (demographics survey, AUDIT, YAACQ, alcohol insight questions)</p>
+</section>
+<section id="qualtrics_scid.csv" class="level4" data-number="1.1.3.2">
+<h4 data-number="1.1.3.2" class="anchored" data-anchor-id="qualtrics_scid.csv"><span class="header-section-number">1.1.3.2</span> qualtrics_scid.csv</h4>
+<p>RA scoring of SCIDs in session</p>
+</section>
+</section>
 </section>
 <section id="scid-data" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="scid-data"><span class="header-section-number">1.2</span> SCID data</h2>

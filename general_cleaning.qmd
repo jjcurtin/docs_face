@@ -2,6 +2,45 @@
 these are notes
 
 ## Study folders and files
+Raw (i.e. unprocessed, has not been reduced or altered in any way) data for each participant lives in THREE locations: 
+  
+  * 1) raw social media data in P:>studydata>face>data>encrypted>raw
+  * 2) Individual subject raw data in P:>studydata>face>data_raw, stored in separate folders labeled with SubID numbers
+  * 3) Aggregate subject data (collected in qualtrics) in the root of "P:>studydata>face>data_raw
+
+### Raw social media data 
+All downloads of Facebook, plus Instagram or Twitter if they have them lives in P:\studydata\face\data\encrypted\raw
+* This data is stored SEPARATELY from all other study data to protect data privacy
+* This data is labeled as the subjects Social Media ID number (SMID), which is a randomly generated 6 digit number.
+
+### Individual subject raw data
+SCID recordings, graduate clinican scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:\studydata\face\data_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047). Every subject folder should include:
+
+#### _SCID.wav: an audio recording of the SCID administered during the study visit (used for label validation)
+**Data cleaning notes:**  
+
+* SubID 471 had a study folder and existed in our qualtrics data, but no SCID  data or other data  was inside of the folder.  SS  reviewed session notes and identified that this subject did not complete the session. Their folder was permanently deleted from raw data 01/2024.
+
+* 3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels
+  * 092 has note in data_raw stating recording was forgotten.   _SS file is currently a copy of the RA review -- should it be missing?
+  * 412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)
+ 
+#### _TLFB.csv: a file listing all past month binge drinking days reported during the timeline follow-back completed in session. Paper copies of the timeline followback exist in the locked study file cabinet.
+
+####_SCID_SS.csv: a file of the graduate clinician (Sarah Sant'Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).
+
+Other files that MAY exist in raw data subject folders include:
+
+* 
+
+### Aggregate session data collected in qualtrics
+Qualtrics data is downloaded from qualtrics and stored as csv files in the root of P:\studydata\face\data_raw. Qualtrics data includes:
+
+#### qualtrics_id_battery.csv
+Participants completion of study questionnaires (demographics survey, AUDIT, YAACQ, alcohol insight questions) 
+
+#### qualtrics_scid.csv
+RA scoring of SCIDs in session
 
 
 ## SCID data
