@@ -6,7 +6,7 @@ Raw (i.e. unprocessed, has not been reduced or altered in any way) data for each
   
   * 1) raw social media data in P:>studydata>face>data>encrypted>raw
   * 2) Individual subject raw data in P:>studydata>face>data_raw, stored in separate folders labeled with SubID numbers
-  * 3) Aggregate subject data (collected in qualtrics) in the root of "P:>studydata>face>data_raw
+  * 3) Aggregate subject data (collected in qualtrics) in the root of P:>studydata>face>data_raw
 
 ### Raw social media data 
 All downloads of Facebook, plus Instagram or Twitter if they have them lives in P:\studydata\face\data\encrypted\raw
@@ -16,7 +16,8 @@ All downloads of Facebook, plus Instagram or Twitter if they have them lives in 
 ### Individual subject raw data
 SCID recordings, graduate clinican scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:\studydata\face\data_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047). Every subject folder should include:
 
-#### _SCID.wav: an audio recording of the SCID administered during the study visit (used for label validation)
+#### _SCID.wav
+Audio recording of the SCID administered during the study visit (used for label validation)
 **Data cleaning notes:**  
 
 * SubID 471 had a study folder and existed in our qualtrics data, but no SCID  data or other data  was inside of the folder.  SS  reviewed session notes and identified that this subject did not complete the session. Their folder was permanently deleted from raw data 01/2024.
@@ -24,14 +25,32 @@ SCID recordings, graduate clinican scoring of SCIDs and other SCID alterations, 
 * 3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels
   * 092 has note in data_raw stating recording was forgotten.   _SS file is currently a copy of the RA review -- should it be missing?
   * 412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)
+  
+* 355 recording exists but was saved as .3gp instead of .wav file. No issues listening to recording
  
-#### _TLFB.csv: a file listing all past month binge drinking days reported during the timeline follow-back completed in session. Paper copies of the timeline followback exist in the locked study file cabinet.
+#### _TLFB.csv
+File listing all past month binge drinking days reported during the timeline follow-back completed in session. Paper copies of the timeline followback exist in the locked study file cabinet.
+**Data cleaning notes:**
+ * 811 missing tlfb, but has drank in the past month so should have one. No notes in session form. SMID 925268
 
-####_SCID_SS.csv: a file of the graduate clinician (Sarah Sant'Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).
 
-Other files that MAY exist in raw data subject folders include:
+####_SCID_SS.csv
+File of the graduate clinician (Sarah Sant'Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).
+**Data cleaning notes:**
+* 93 scids need to be scored by Sarah still. None of these have new scid or scid review files (as expected for new scids)
 
-* 
+**Other files that MAY exist in raw data subject folders include:**
+
+####_SCIDReview.csv
+These files were early reviews of SCIDs done by SS or lead undergraduate RAs to identify early SCID scoring issues to be discussed in session. These files do NOT replace any existing SCID scoring. If changes were made to scoring based on review, subjects will have a new_scid file in their folder
+* All happened early in data collection - scid recordings in May - June 2018. Flagged by questionable scoring brought up during weekly meetings. 
+* All reviews completed june - august 2018
+* All files have accompanying _SS files with later score dates
+
+####_NewSCID.csv
+These are updates to scid scoring procedures that were made after a number of questions from initial data collection. The changes were implemented 7/12/2018. For full details on scoring, see methods > Measures > SCID_Scoring decisions. Briefly, we clarified cutoffs for the freqency of serious (2 or more past year) vs less serious (monthly) consequences for Qs 6, 7, and 9.
+* New SCID files are RA corrections to their qualtrics reported SCID scores. THESE FILES REPLACE THE EXISTING RA SCID VALUES.
+* Most were in response to earlier SCID review, final 4 were identified in weekly meeting and identified for rescoring.
 
 ### Aggregate session data collected in qualtrics
 Qualtrics data is downloaded from qualtrics and stored as csv files in the root of P:\studydata\face\data_raw. Qualtrics data includes:

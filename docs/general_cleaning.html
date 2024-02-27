@@ -176,13 +176,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Raw (i.e.&nbsp;unprocessed, has not been reduced or altered in any way) data for each participant lives in THREE locations:</p>
 <ul>
 <li><ol type="1">
-<li>raw social media data in “P:”</li>
+<li>raw social media data in P:&gt;studydata&gt;face&gt;data&gt;encrypted&gt;raw</li>
 </ol></li>
 <li><ol start="2" type="1">
-<li>Individual subject raw data in “P:_raw”, stored in separate folders labeled with SubID numbers</li>
+<li>Individual subject raw data in P:&gt;studydata&gt;face&gt;data_raw, stored in separate folders labeled with SubID numbers</li>
 </ol></li>
 <li><ol start="3" type="1">
-<li>Aggregate subject data (collected in qualtrics) in the root of “P:_raw”</li>
+<li>Aggregate subject data (collected in qualtrics) in the root of P:&gt;studydata&gt;face&gt;data_raw</li>
 </ol></li>
 </ul>
 <section id="raw-social-media-data" class="level3" data-number="1.1.1">
@@ -192,9 +192,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="individual-subject-raw-data" class="level3" data-number="1.1.2">
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="individual-subject-raw-data"><span class="header-section-number">1.1.2</span> Individual subject raw data</h3>
 <p>SCID recordings, graduate clinican scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047). Every subject folder should include:</p>
-<section id="scid.wav-an-audio-recording-of-the-scid-administered-during-the-study-visit-used-for-label-validation" class="level4" data-number="1.1.2.1">
-<h4 data-number="1.1.2.1" class="anchored" data-anchor-id="scid.wav-an-audio-recording-of-the-scid-administered-during-the-study-visit-used-for-label-validation"><span class="header-section-number">1.1.2.1</span> _SCID.wav: an audio recording of the SCID administered during the study visit (used for label validation)</h4>
-<p><strong>Data cleaning notes:</strong></p>
+<section id="scid.wav" class="level4" data-number="1.1.2.1">
+<h4 data-number="1.1.2.1" class="anchored" data-anchor-id="scid.wav"><span class="header-section-number">1.1.2.1</span> _SCID.wav</h4>
+<p>Audio recording of the SCID administered during the study visit (used for label validation) <strong>Data cleaning notes:</strong></p>
 <ul>
 <li><p>SubID 471 had a study folder and existed in our qualtrics data, but no SCID data or other data was inside of the folder. SS reviewed session notes and identified that this subject did not complete the session. Their folder was permanently deleted from raw data 01/2024.</p></li>
 <li><p>3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels</p>
@@ -202,15 +202,15 @@ ul.task-list li input[type="checkbox"] {
 <li>092 has note in data_raw stating recording was forgotten. _SS file is currently a copy of the RA review – should it be missing?</li>
 <li>412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)</li>
 </ul></li>
+<li><p>355 recording exists but was saved as .3gp instead of .wav file. No issues listening to recording</p></li>
 </ul>
 </section>
-<section id="tlfb.csv-a-file-listing-all-past-month-binge-drinking-days-reported-during-the-timeline-follow-back-completed-in-session.-paper-copies-of-the-timeline-followback-exist-in-the-locked-study-file-cabinet." class="level4" data-number="1.1.2.2">
-<h4 data-number="1.1.2.2" class="anchored" data-anchor-id="tlfb.csv-a-file-listing-all-past-month-binge-drinking-days-reported-during-the-timeline-follow-back-completed-in-session.-paper-copies-of-the-timeline-followback-exist-in-the-locked-study-file-cabinet."><span class="header-section-number">1.1.2.2</span> _TLFB.csv: a file listing all past month binge drinking days reported during the timeline follow-back completed in session. Paper copies of the timeline followback exist in the locked study file cabinet.</h4>
-<p>####_SCID_SS.csv: a file of the graduate clinician (Sarah Sant’Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).</p>
-<p>Other files that MAY exist in raw data subject folders include:</p>
-<ul>
-<li></li>
-</ul>
+<section id="tlfb.csv" class="level4" data-number="1.1.2.2">
+<h4 data-number="1.1.2.2" class="anchored" data-anchor-id="tlfb.csv"><span class="header-section-number">1.1.2.2</span> _TLFB.csv</h4>
+<p>File listing all past month binge drinking days reported during the timeline follow-back completed in session. Paper copies of the timeline followback exist in the locked study file cabinet. <strong>Data cleaning notes:</strong> * 811 missing tlfb, but has drank in the past month so should have one. No notes in session form. SMID 925268</p>
+<p>####_SCID_SS.csv File of the graduate clinician (Sarah Sant’Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports). <strong>Data cleaning notes:</strong> * 93 scids need to be scored by Sarah still. None of these have new scid or scid review files (as expected for new scids)</p>
+<p><strong>Other files that MAY exist in raw data subject folders include:</strong> ####_SCIDReview.csv These files were early reviews of SCIDs done by SS or lead undergraduate RAs to identify early SCID scoring issues to be discussed in session. These files do NOT replace any existing SCID scoring. If changes were made to scoring based on review, subjects will have a new_scid file in their folder * All happened early in data collection - scid recordings in May - June 2018. Flagged by questionable scoring brought up during weekly meetings. * All reviews completed june - august 2018 * All files have accompanying _SS files with later score dates</p>
+<p>####_NewSCID.csv These are updates to scid scoring procedures that were made after a number of questions from initial data collection. The changes were implemented 7/12/2018. For full details on scoring, see methods &gt; Measures &gt; SCID_Scoring decisions. Briefly, we clarified cutoffs for the freqency of serious (2 or more past year) vs less serious (monthly) consequences for Qs 6, 7, and 9. * New SCID files are RA corrections to their qualtrics reported SCID scores. THESE FILES REPLACE THE EXISTING RA SCID VALUES. * Most were in response to earlier SCID review, final 4 were identified in weekly meeting and identified for rescoring.</p>
 </section>
 </section>
 <section id="aggregate-session-data-collected-in-qualtrics" class="level3" data-number="1.1.3">
