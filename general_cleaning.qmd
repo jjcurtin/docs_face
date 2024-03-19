@@ -73,8 +73,11 @@ File listing all past month binge drinking days reported during the timeline fol
 ####_SCID_SS.csv
 File of the graduate clinician (Sarah Sant'Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).
 **Data cleaning notes:**
-* 93 scids need to be scored by Sarah still. None of these have new scid or scid review files (as expected for new scids)
 * First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to aviod later confusion (it is 6 times in last 12 months)
+*3/5: Sarah resaved all _SS files as .csv files (older files were .xlsx)
+* Totals were not ALWAYS entered in _SS files. Totals will be calculated in data cleaning rather than pulled from raw files.
+*All SS files were confirmed to use correct scoring (1, 3) recoded to yes/no for each symptom in cleaning
+
 
 **Other files that MAY exist in raw data subject folders include:**
 
