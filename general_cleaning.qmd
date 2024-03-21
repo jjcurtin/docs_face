@@ -50,14 +50,15 @@ SMIDs = SMIDs[-which(SMIDs %in% BadSMIDs)]
 
 
 ### Individual subject raw data
-SCID recordings, graduate clinican scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:\studydata\face\data_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047). Every subject folder should include:
+SCID recordings, graduate clinican scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:\studydata\face\data_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047). 
+**Note**: SJS permanently deleted folder for subid 471 1/2024 due to folder being empty. Confirmed via checking session notes that subject discontinued and did not complete the session, folder should have been deleted day of session
+
+
+Every subject folder should include:
 
 #### _SCID.wav
 Audio recording of the SCID administered during the study visit (used for label validation)
 **Data cleaning notes:**  
-
-* SubID 471 had a study folder and existed in our qualtrics data, but no SCID  data or other data  was inside of the folder.  SS  reviewed session notes and identified that this subject did not complete the session. Their folder was permanently deleted from raw data 01/2024.
-
 * 3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels
   * 092 has note in data_raw stating recording was forgotten.   _SS file is currently a copy of the RA review -- should it be missing?
   * 412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)
@@ -73,7 +74,8 @@ File listing all past month binge drinking days reported during the timeline fol
 ####_SCID_SS.csv
 File of the graduate clinician (Sarah Sant'Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).
 **Data cleaning notes:**
-* First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to aviod later confusion (it is 6 times in last 12 months)
+* Three subjects (092, 412, 509) were missing SCID audio recordings and could not be independently scored by Sarah. _SCID_SS scoring files for these three participants are copies of the qualtrics responses for these sessions. Questions: Should I delete SS files for these and just fill them in from qualtrics in cleaning? How to handle these in reliability analysis?
+* First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to avoid later confusion (it is 6 times in last 12 months) 3/2024
 *3/5: Sarah resaved all _SS files as .csv files (older files were .xlsx)
 * Totals were not ALWAYS entered in _SS files. Totals will be calculated in data cleaning rather than pulled from raw files.
 *All SS files were confirmed to use correct scoring (1, 3) recoded to yes/no for each symptom in cleaning
@@ -86,9 +88,10 @@ These files were early reviews of SCIDs done by SS or lead undergraduate RAs to 
 * All happened early in data collection - scid recordings in May - June 2018. Flagged by questionable scoring brought up during weekly meetings. 
 * All reviews completed june - august 2018
 * All files have accompanying _SS files with later score dates
+* SS is considering moving these all to a separate administrative folder?
 
 ####_NewSCID.csv
-These are updates to scid scoring procedures that were made after a number of questions from initial data collection. The changes were implemented 7/12/2018. For full details on scoring, see methods > Measures > SCID_Scoring decisions. Briefly, we clarified cutoffs for the freqency of serious (2 or more past year) vs less serious (monthly) consequences for Qs 6, 7, and 9.
+These are updates to scid scoring procedures that were made after a number of questions from initial data collection. The changes were implemented 7/12/2018. For full details on scoring, see methods > Measures > SCID_Scoring decisions. Briefly, we clarified cutoffs for the frequency of serious (2 or more past year) vs less serious (monthly) consequences for items 6, 7, and 9.
 * New SCID files are RA corrections to their qualtrics reported SCID scores. THESE FILES REPLACE THE EXISTING RA SCID VALUES.
 * Most were in response to earlier SCID review, final 4 were identified in weekly meeting and identified for rescoring.
 
