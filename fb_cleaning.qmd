@@ -1,0 +1,23 @@
+# These are notes related to extracting and cleaning Facebook data
+FB data has not been extracted from raw files since 2021. These are notes from previous processing scripts to guide cleaning once we get to this point
+
+## Unzipping problems
+Some files were unable to be unzipped due to corrupt file format
+
+SMIDS with known problems unzipping data: 706424, 398020, 701927, 145406, 114589, 434728, 808900, 169655, 138929, 398220
+
+## SMIDs with missing/low amount of FB data
+706424 -- missing Social media?  FB is for sure gone (never came into download resched) but session form indicates insta download 
+398220 only photos and videos 10/26/2018
+701927 only photos and vids 10.26.18
+145406 only photos and videos 10/31/2018
+114589 only photo and vids 10/30/18
+434728 only photos and vids  10.31.2018
+913773 19 items...probably ok? keep an eye on for processing. 11.2.2018
+141890 19 items 11.14.2018 keep
+988738 - 18 items 2.1.2019 keep
+582911 17 items 2.1.2019 -- this likely looks like someone who doesn't use FB that much and potentially
+deleted their messages before coming in. Keep?
+808900 - No Facebook 11.8.2018
+169655 No FB 11.16.2018
+138929 just messages 1.24.2019

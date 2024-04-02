@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Study notebook for FACE - 1&nbsp; Methods</title>
+<title>raw_data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,146 +23,90 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./index.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
-  "limit": 20,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<script src="raw_data_files/libs/clipboard/clipboard.min.js"></script>
+<script src="raw_data_files/libs/quarto-html/quarto.js"></script>
+<script src="raw_data_files/libs/quarto-html/popper.min.js"></script>
+<script src="raw_data_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="raw_data_files/libs/quarto-html/anchor.min.js"></script>
+<link href="raw_data_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="raw_data_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="raw_data_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="raw_data_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="raw_data_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="fullcontent">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./general_cleaning.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Methods</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Study notebook for FACE</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/jjcurtin/notes_face" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
-            Facebook
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
-            LinkedIn
-            </a>
-          </li>
-      </ul>
-    </div>
-</div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Welcome</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./general_cleaning.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Methods</span></span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    </div>
-<!-- main -->
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Methods</span></h1>
-</div>
 
 
+<section id="raw-data-notes" class="level1">
+<h1>Raw data notes</h1>
+<p>These notes define raw data sources, outline naming conventions and purposes of raw data files, and provide notes about participants with missing/unusual raw data files. See script chk_file_types.Rmd for code used to identify unusual files at this level</p>
+</section>
+<section id="study-folders-and-files" class="level1">
+<h1>Study folders and files</h1>
+<p>Raw (i.e.&nbsp;unprocessed, has not been reduced or altered in any way) data for each participant lives in THREE locations:</p>
+<ul>
+<li><ol type="1">
+<li>raw social media data in P:&gt;studydata&gt;face&gt;data&gt;encrypted&gt;raw</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Individual subject raw data in P:&gt;studydata&gt;face&gt;data_raw, stored in separate folders labeled with SubID numbers</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Aggregate subject data (collected in qualtrics) in the root of P:&gt;studydata&gt;face&gt;data_raw</li>
+</ol></li>
+</ul>
+<section id="raw-social-media-data" class="level2">
+<h2 class="anchored" data-anchor-id="raw-social-media-data">Raw social media data</h2>
+<p>All downloads of Facebook, plus Instagram or Twitter if they have them lives in P: * This data is stored SEPARATELY from all other study data to protect data privacy * This data is labeled as the subjects Social Media ID number (SMID), which is a randomly generated 6 digit number.</p>
+<p><strong>Missing/unexpected files</strong> Social Media folder completely empty * SMID 706424 <em> No Facebook? Other SM data present </em> SMID 808900 * SMID 169655</p>
+</section>
+<section id="individual-subject-raw-data" class="level2">
+<h2 class="anchored" data-anchor-id="individual-subject-raw-data">Individual subject raw data</h2>
+<p>SCID recordings, graduate clinician scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047).</p>
+<p><strong>Missing/unexpected files</strong>: SJS permanently deleted folder for subid 471 1/2024 due to folder being empty. Confirmed via checking session notes that subject discontinued and did not complete the session, folder should have been deleted day of session</p>
+<p>Every subject folder should include:</p>
+<section id="scid.wav" class="level3">
+<h3 class="anchored" data-anchor-id="scid.wav">_SCID.wav</h3>
+<p>Audio recording of the SCID administered during the study visit (used for label validation) <strong>Data cleaning notes:</strong><br>
+* 3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels * 092 has note in data_raw stating recording was forgotten. _SS file is currently a copy of the RA review – should it be missing? * 412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)</p>
+<ul>
+<li>355 recording exists but was saved as .3gp instead of .wav file. No issues listening to recording</li>
+</ul>
+<section id="tlfb.csv" class="level4">
+<h4 class="anchored" data-anchor-id="tlfb.csv">_TLFB.csv</h4>
+<p>File listing all past month binge drinking days reported during the timeline follow-back completed in session. Paper copies of the timeline followback exist in the locked study file cabinet. <strong>Data cleaning notes:</strong> * 811 missing tlfb, but has drank in the past month so should have one. No notes in session form. * 3/2024 Physical TLFB file exists for this subject. SS created a TLFB .csv file for this subject using the raw data file.</p>
+<p>####_SCID_SS.csv File of the graduate clinician (Sarah Sant’Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).</p>
+<p><strong>Data cleaning notes:</strong> * Three subjects (092, 412, 509) were missing SCID audio recordings and could not be independently scored by Sarah. _SCID_SS scoring files for these three participants are copies of the qualtrics responses for these sessions. Questions: Should I delete SS files for these and just fill them in from qualtrics in cleaning? How to handle these in reliability analysis? * First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to avoid later confusion (it is 6 times in last 12 months) 3/2024 *3/5: Sarah resaved all _SS files as .csv files (older files were .xlsx)</p>
+<p><strong>Other files that MAY exist in raw data subject folders include:</strong></p>
+<p>####_SCIDReview.csv These files were early reviews of SCIDs done by SS or lead undergraduate RAs to identify early SCID scoring issues to be discussed in session. These files do NOT replace any existing SCID scoring. If changes were made to scoring based on review, subjects will have a new_scid file in their folder * All happened early in data collection - scid recordings in May - June 2018. Flagged by questionable scoring brought up during weekly meetings. * All reviews completed june - august 2018 * All files have accompanying _SS files with later score dates * SS is considering moving these all to a separate administrative folder?</p>
+<p>####_NewSCID.csv These are updates to scid scoring procedures that were made after a number of questions from initial data collection. The changes were implemented 7/12/2018. For full details on scoring, see methods &gt; Measures &gt; SCID_Scoring decisions. Briefly, we clarified cutoffs for the frequency of serious (2 or more past year) vs less serious (monthly) consequences for items 6, 7, and 9. * New SCID files are RA corrections to their qualtrics reported SCID scores. THESE FILES REPLACE THE EXISTING RA SCID VALUES. * Most were in response to earlier SCID review, final 4 were identified in weekly meeting and identified for rescoring.</p>
+</section>
+</section>
+<section id="aggregate-session-data-collected-in-qualtrics" class="level3">
+<h3 class="anchored" data-anchor-id="aggregate-session-data-collected-in-qualtrics">Aggregate session data collected in qualtrics</h3>
+<p>Qualtrics data is downloaded from qualtrics and stored as csv files in the root of P:_raw. Qualtrics data includes:</p>
+<section id="qualtrics_id_battery.csv" class="level4">
+<h4 class="anchored" data-anchor-id="qualtrics_id_battery.csv">qualtrics_id_battery.csv</h4>
+<p>Participants completion of study questionnaires (demographics survey, AUDIT, YAACQ, alcohol insight questions)</p>
+</section>
+<section id="qualtrics_scid.csv" class="level4">
+<h4 class="anchored" data-anchor-id="qualtrics_scid.csv">qualtrics_scid.csv</h4>
+<p>RA scoring of SCIDs in session</p>
+</section>
+</section>
+</section>
+</section>
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<p>these are notes</p>
-
-
-
-</main> <!-- /main -->
+</main>
+<!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -396,17 +340,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/notes_face/edit/main/general_cleaning.qmd" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
+</body></html>
