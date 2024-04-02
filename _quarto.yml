@@ -24,3 +24,6 @@ book:
   chapters:
     - index.qmd
     - general_cleaning.qmd
+    - scid_cleaning.qmd
+    - fb_cleaning.qmd
+    - raw_data.qmd

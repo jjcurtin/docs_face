@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sarah Sant’ana, MS">
 
-<title>Study notebook for FACE</title>
+<title>Study notebook for FACE - 3&nbsp; These are notes related to extracting and cleaning Facebook data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./general_cleaning.html" rel="next">
+<link href="./raw_data.html" rel="next">
+<link href="./scid_cleaning.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./fb_cleaning.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">These are notes related to extracting and cleaning Facebook data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -128,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fb_cleaning.html" class="sidebar-item-text sidebar-link">
+  <a href="./fb_cleaning.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">These are notes related to extracting and cleaning Facebook data</span></span></a>
   </div>
 </li>
@@ -166,28 +166,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#unzipping-problems" id="toc-unzipping-problems" class="nav-link active" data-scroll-target="#unzipping-problems"><span class="header-section-number">3.1</span> Unzipping problems</a></li>
+  <li><a href="#smids-with-missinglow-amount-of-fb-data" id="toc-smids-with-missinglow-amount-of-fb-data" class="nav-link" data-scroll-target="#smids-with-missinglow-amount-of-fb-data"><span class="header-section-number">3.2</span> SMIDs with missing/low amount of FB data</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jjcurtin/notes_face/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jjcurtin/notes_face/edit/main/fb_cleaning.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Study notebook for FACE</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">These are notes related to extracting and cleaning Facebook data</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Sarah Sant’ana, MS </p>
-          </div>
-  </div>
     
   
     
@@ -198,9 +193,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="welcome">Welcome</h2>
-<p>This web book is a collection of general documentation, demostrations, and other supporting materials for the FACE Project and its related studies.</p>
+<p>FB data has not been extracted from raw files since 2021. These are notes from previous processing scripts to guide cleaning once we get to this point</p>
+<section id="unzipping-problems" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="unzipping-problems"><span class="header-section-number">3.1</span> Unzipping problems</h2>
+<p>Some files were unable to be unzipped due to corrupt file format</p>
+<p>SMIDS with known problems unzipping data: 706424, 398020, 701927, 145406, 114589, 434728, 808900, 169655, 138929, 398220</p>
+</section>
+<section id="smids-with-missinglow-amount-of-fb-data" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="smids-with-missinglow-amount-of-fb-data"><span class="header-section-number">3.2</span> SMIDs with missing/low amount of FB data</h2>
+<p>706424 – missing Social media? FB is for sure gone (never came into download resched) but session form indicates insta download 398220 only photos and videos 10/26/2018 701927 only photos and vids 10.26.18 145406 only photos and videos 10/31/2018 114589 only photo and vids 10/30/18 434728 only photos and vids 10.31.2018 913773 19 items…probably ok? keep an eye on for processing. 11.2.2018 141890 19 items 11.14.2018 keep 988738 - 18 items 2.1.2019 keep 582911 17 items 2.1.2019 – this likely looks like someone who doesn’t use FB that much and potentially deleted their messages before coming in. Keep? 808900 - No Facebook 11.8.2018 169655 No FB 11.16.2018 138929 just messages 1.24.2019</p>
 
 
 </section>
@@ -595,10 +596,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./scid_cleaning.html" class="pagination-link" aria-label="SCID Cleaning">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">SCID Cleaning</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./general_cleaning.html" class="pagination-link" aria-label="Methods">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Methods</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./raw_data.html" class="pagination-link" aria-label="Raw data notes">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Raw data notes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -607,4 +611,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jjcurtin/notes_face/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jjcurtin/notes_face/edit/main/fb_cleaning.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
