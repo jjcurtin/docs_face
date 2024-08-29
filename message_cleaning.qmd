@@ -4,6 +4,18 @@ format: html
 editor: visual
 ---
 
+Notes about text preprocessing decisions and ongoing things to consider –
+
+## Text preprocessing is poorly defined
+
+Especially for short form communication
+
+From Hickman et al 2022: "—for instance, organizational researchers have provided four distinct recommendations for stemming during open vocabulary text mining: Always stem except on short documents (Kobayashi et al., 2018a), only stem in small corpora (Kern et al., 2016), only stem if it does not reduce classification/prediction accuracy (Kobayashi et al., 2018b), and cautiously consider stemming only after conducting topic modeling (Banks et al., 2018)."
+
+![](images/Screenshot 2024-08-29 110955.png)
+
+## Current preprocessing methods
+
 Here are text cleaning considerations – ongoing with eda and feature engineering
 
 1.  **Dimensionality reduction:**
@@ -51,3 +63,9 @@ Here are text cleaning considerations – ongoing with eda and feature engineeri
     -   Some slang dictionaries do exist, but we will likely end up fine tuning a pretrained slang identifier. Need to do EDA to ensure slang words containing symbols should be retained – (e.g. n00b, b!tch). Potentially context aware spell checker will help here
 
     -   Look into Python **Urban Dictionary API:** Provides definitions for modern slang terms. While there isn’t an official API, you can scrape data or use unofficial APIs to get slang definitions.
+
+    ## Identifying need for differing preprocessing
+
+    ![](images/Screenshot 2024-08-29 111247.png)
+
+![](images/Screenshot 2024-08-29 111303.png)
