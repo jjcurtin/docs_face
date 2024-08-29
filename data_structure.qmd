@@ -6,7 +6,7 @@ editor: visual
 
 These notes define raw data sources, outline naming conventions and purposes of raw data files, and provide notes about participants with missing/unusual raw data files. See script chk_file_types.Rmd for code used to identify unusual files at this level
 
-### Study folders and files 
+### Study folders and files
 
 Raw (i.e. unprocessed, has not been reduced or altered in any way) data for each participant lives in THREE locations:
 
@@ -26,9 +26,9 @@ Social Media folder completely empty
 
 No Facebook? Other SM data present
 
--    SMID 808900
+-   SMID 808900
 
--    SMID 169655
+-   SMID 169655
 
 ## Individual subject raw data
 
@@ -46,13 +46,12 @@ An audio recording of the SCID administered during the study visit (used for lab
 
 -   3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels
 
-    -    092 has note in data_raw stating recording was forgotten. \_SS file is currently a copy of the RA review -- should it be missing?
+    -   092 has note in data_raw stating recording was forgotten. \_SS file is currently a copy of the RA review -- should it be missing?
 
     -   412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)
 
-```{=html}
 <!-- -->
-```
+
 -   355 recording exists but was saved as .3gp instead of .wav file. No issues listening to recording
 
 2.  **\_TLFB.csv**
@@ -73,7 +72,7 @@ File of the graduate clinician (Sarah Sant'Ana) SCID scoring based off of the SC
 
 -   Three subjects (092, 412, 509) were missing SCID audio recordings and could not be independently scored by Sarah. \_SCID_SS scoring files for these three participants are copies of the qualtrics responses for these sessions. Questions: Should I delete SS files for these and just fill them in from qualtrics in cleaning? How to handle these in reliability analysis?
 
--    First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to avoid later confusion (it is 6 times in last 12 months) 3/2024
+-   First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to avoid later confusion (it is 6 times in last 12 months) 3/2024
 
 -   3/5: Sarah resaved all \_SS files as .csv files (older files were .xlsx)
 
