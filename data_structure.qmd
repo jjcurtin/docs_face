@@ -1,14 +1,14 @@
 # Raw data notes
 These notes define raw data sources, outline naming conventions and purposes of raw data files, and provide notes about participants with missing/unusual raw data files. See script chk_file_types.Rmd for code used to identify unusual files at this level
 
-# Study folders and files
+## Study folders and files
 Raw (i.e. unprocessed, has not been reduced or altered in any way) data for each participant lives in THREE locations: 
   
   * 1) raw social media data in P:>studydata>face>data>encrypted>raw
   * 2) Individual subject raw data in P:>studydata>face>data_raw, stored in separate folders labeled with SubID numbers
   * 3) Aggregate subject data (collected in qualtrics) in the root of P:>studydata>face>data_raw
 
-## Raw social media data 
+### Raw social media data 
 All downloads of Facebook, plus Instagram or Twitter if they have them lives in P:\studydata\face\data\encrypted\raw
 * This data is stored SEPARATELY from all other study data to protect data privacy
 * This data is labeled as the subjects Social Media ID number (SMID), which is a randomly generated 6 digit number.
@@ -22,7 +22,7 @@ No Facebook? Other SM data present
   * SMID 169655
 
 
-## Individual subject raw data
+### Individual subject raw data
 SCID recordings, graduate clinician scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:\studydata\face\data_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047). 
 
 **Missing/unexpected files**: SJS permanently deleted folder for subid 471 1/2024 due to folder being empty. Confirmed via checking session notes that subject discontinued and did not complete the session, folder should have been deleted day of session
@@ -30,7 +30,7 @@ SCID recordings, graduate clinician scoring of SCIDs and other SCID alterations,
 
 Every subject folder should include:
 
-### _SCID.wav
+#### _SCID.wav
 Audio recording of the SCID administered during the study visit (used for label validation)
 **Data cleaning notes:**  
 * 3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels
