@@ -1,0 +1,35 @@
+---
+title: "topic_modeling.qmd"
+format: html
+editor: visual
+---
+
+## Topic modeling
+
+Consider topic modeling to identify bottom up patterns in messages. Use to guide EDA for differences between AUD groups. Traditional topic modeling is not suited for short form messaging, so I will look at clustering of pretrained embeddings in my data
+
+BERT – Bidirectional Encoder Representations from Transformers
+
+-   Method - takes in a text, tokenizes it into a sequence of tokens, add in optional special tokens, and applies a Transformer encoder. The hidden states of the last layer are the contextual word embeddings.
+
+-   **Strengths:**
+
+    -   **Contextual Understanding:** BERT captures the context of words bidirectionally \>understands nuanced meanings in text.
+
+    -   **Fine-Tuning:** BERT can be fine-tuned on specific tasks –e.g. sentiment analysis
+
+-   **Limitations:**
+
+    -   **Static Embeddings:** Embeddings are fixed for the given input and might not capture evolving language use or fine-grained sentiment as effectively as some newer llm models.
+
+    -   **Short-Term Memory:** BERT may struggle with longer sequences or very detailed contextual nuances in longer messages.
+
+Quarto workflow:
+
+1.  **Generate BERT embeddings** using sentencetransformer package in python
+
+2.  Use reticulate package to load embeddings into R and perform k means clustering
+
+3.  **Load embeddings into R** and perform clustering (e.g., K-Means).
+
+4.  **Analyze clusters** to identify differences between groups and guide EDA for important filtering/identification of themes in messages

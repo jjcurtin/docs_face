@@ -1,0 +1,51 @@
+---
+title: "sentiment.qmd"
+format: html
+editor: visual
+---
+
+# Basic sentiment analysis
+
+Notes about different basic sentiment analysis techniques explored and future directions
+
+### Word level sentiment analysis lexicons
+
+Three popular unigram lexicons for word-level sentiment analysis with tidyr --
+
+1)  NRC: binary word categorization (“yes”/“no”) into categories of positive, negative, anger, anticipation, disgust, fear, joy, sadness, surprise, and trust. Words can have multiple entries if assigned to multiple sentiments. Small degree of word stemming. -6453 unique words
+2)  Bing: binary word classification into positive and negative categories. Small degree of word stemming. 6783 unique words
+3)  AFINN: assigns words with a score that runs between -5 and 5, with negative scores indicating negative sentiment and positive scores indicating positive sentiment. Small degree of stemming. 2477 unique words
+
+Can consider reducing all to just positive vs negative sentiment and combining words to maximize dictionary
+
+No obvious differences in effectiveness of one dictionary vs another in EDA
+
+### Sentence level sentiment analysis lexicons
+
+Sentimentr package assigns polarity at the level of the sentence, taking into account amplifiers/valence shifting words (e.g. really, not). Can customize dictionary or valence words and pass arguments indiciating how far before/after a polarized word that valence shifters should function. Multiple dictionaries available in lexicon package including:
+
+-   *Combined Jockers_rinker* -default of sentimentr - combined and augmented version of Jockers (2017) & Rinker's augmented Hu & Liu (2004) positive/negative word list - 11,710 unique words with polarity ranges from -2 to 1 (why?)
+
+-   *SenticNet Polarity* - Cambria, Poria, Bajpai,& Schuller's (2016) -23626 words with polarity ratings between -1 and 1
+
+-   *Sentiword Polarity* -Baccianella, Esuli and Sebastiani's (2010) positive/negative word list as sentiment lookup values -polarity value was assigned by taking the difference between the original data set's negative and positive attribution (PosScore - NegScore). -20093 words
+
+-   *slang sentiment* -Wu, Morstatter, & Liu's (2016) positive/negative slang word list as sentiment lookup values -48277 slang phrases, rated by sentiment ranging -1 to 1
+
+-   *Emoji sentiment* Does not include all emojis, but I added to my emoji spreadsheet -Novak, Smailovic, Sluban, & Mozetic's (2015) emoji sentiment data. - used Twitter data and 83 coders to rate each of the the emoji uses as negative, neutral, or positiveOther potentially useful dictionaries from lexicon package
+
+*Lemmetization list* Mechura's (2016) English lemmatization list, reduces to root lemetization 41531 unique words associated with 25950 unique stems
+
+*Zac Anger Profanity words* -3076 profane words -no sentiment but could be used in combo with face bad words? They look good
+
+# Advanced Sentiment analysis
+
+Traditional approaches may not do well do to short form and informal language in msgs. Can consider –
+
+-   **Pre-Trained Models:**
+
+    -   **VADER (Valence Aware Dictionary and sEntiment Reasoner):** VADER pretrained specifically on social media data, compatibility with shorter text and emojis.
+
+    -   **BERT** (Bidirectional Encoder Representations from Transformers) can be fine-tuned for sentiment analysis on informal text. Look into Hugging Face’s transformers library in Python for pretrained models
+
+    -   

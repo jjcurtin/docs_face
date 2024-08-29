@@ -23,7 +23,18 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - general_cleaning.qmd
-    - scid_cleaning.qmd
-    - fb_cleaning.qmd
-    - raw_data.qmd
+    - data_structure.qmd
+    - outcome_labels.qmd
+    - study_sample.qmd
+    - message_cleaning.qmd
+    - part: "Feature Engineering"
+      chapters: 
+        - feat_overview.qmd
+        - dictionaries.qmd
+        - sentiment_analysis.qmd
+        - topic_modeling.qmd
+        - llms.qmd
+        - tune_liwc.qmd
+        - tune_emojis.qmd
+
+    

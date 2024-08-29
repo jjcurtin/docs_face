@@ -1,0 +1,255 @@
+---
+title: "tune_liwc.qmd"
+format: html
+editor: visual
+---
+
+## Fine tuning LIWC dictionaries
+
+**Overview of the approach using substance category example**
+
+1.  **Identify Messages with LIWC Alcohol Terms:** Use the LIWC dictionary to identify messages that contain alcohol-related words.
+
+2.  **Calculate Normalized Alcohol Scores:** Compute normalized alcohol scores for these identified messages.
+
+3.   **Use BERT or LLM for Contextual Analysis:** Train a model to identify similar messages that might contain new, relevant alcohol-related terms.
+
+4.   **Extract and Add New Terms:** Extract new terms from these identified messages and add them to the LIWC dictionary.
+
+**Quarto Document with R and Python Code**
+
+Here’s a sample Quarto document that combines R and Python code to accomplish this task.
+
+Markdown
+
+---
+
+title: "Expand LIWC Dictionary with New Alcohol-Related Terms"
+
+format: html
+
+---
+
+\## Load Libraries and Data
+
+\`\`\`{r}
+
+\# Load required R libraries
+
+library(dplyr)
+
+library(stringr)
+
+library(tidyr)
+
+library(tidytext)
+
+\# Sample data
+
+df \<- data.frame(
+
+  user_id = c(1, 1, 2, 2, 3, 3),
+
+  message = c("Drinking vodka tonight!", "Feeling great with a beer in hand",
+
+              "Partying with shots", "No alcohol here!",
+
+              "Vodka and tequila", "Just a regular day")
+
+)
+
+\# LIWC dictionary for alcohol-related terms (sample)
+
+liwc_alcohol_terms \<- c("vodka", "beer", "shots", "tequila")
+
+\# Function to calculate normalized alcohol score
+
+calculate_normalized_score \<- function(message, alcohol_words) {
+
+  cleaned_message \<- tolower(message) %\>%
+
+    str_remove_all("\[\[:punct:\]\]") %\>%
+
+    str_squish()
+
+  words \<- unlist(str_split(cleaned_message, "[\\\\s+](file://s+)"))
+
+  num_words \<- length(words)
+
+  alcohol_count \<- sum(words %in% alcohol_words)
+
+  if (num_words \> 0) {
+
+    return(alcohol_count \* sqrt(num_words) / num_words)
+
+  } else {
+
+    return(0)
+
+  }
+
+}
+
+\# Apply function to compute scores
+
+df \<- df %\>%
+
+  mutate(normalized_alcohol_score = calculate_normalized_score(message, liwc_alcohol_terms))
+
+Train BERT to Identify Similar Messages
+
+Python
+
+\# Import required libraries
+
+from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments
+
+import torch
+
+import pandas as pd
+
+\# Load tokenizer and model
+
+model_name = "bert-base-uncased"
+
+tokenizer = BertTokenizer.from_pretrained(model_name)
+
+model = BertForSequenceClassification.from_pretrained(model_name)
+
+\# Convert R data to pandas DataFrame
+
+data = {'message': \["Drinking vodka tonight!", "Feeling great with a beer in hand",
+
+                    "Partying with shots", "No alcohol here!",
+
+                    "Vodka and tequila", "Just a regular day"\],
+
+        'normalized_alcohol_score': \[1, 0.9, 0.8, 0, 1, 0\]}
+
+df = pd.DataFrame(data)
+
+\# Prepare the data for BERT
+
+def tokenize_and_encode(messages):
+
+    return tokenizer(messages.tolist(), padding=True, truncation=True, return_tensors="pt")
+
+\# Tokenize the messages
+
+inputs = tokenize_and_encode(df\['message'\])
+
+\# Define a simple dataset class
+
+class MessageDataset(torch.utils.data.Dataset):
+
+    def \_\_init\_\_(self, inputs, scores):
+
+        self.inputs = inputs
+
+        self.scores = scores
+
+    def \_\_len\_\_(self):
+
+        return len(self.scores)
+
+    def \_\_getitem\_\_(self, idx):
+
+        item = {key: torch.tensor(val\[idx\]) for key, val in self.inputs.items()}
+
+        item\['labels'\] = torch.tensor(self.scores\[idx\])
+
+        return item
+
+\# Create dataset
+
+dataset = MessageDataset(inputs, df\['normalized_alcohol_score'\])
+
+\# Train model (in practice, use more data and proper training setup)
+
+training_args = TrainingArguments(
+
+    output_dir="./results",
+
+    evaluation_strategy="epoch",
+
+    per_device_train_batch_size=2,
+
+    num_train_epochs=1,
+
+)
+
+trainer = Trainer(
+
+    model=model,
+
+    args=training_args,
+
+    train_dataset=dataset
+
+)
+
+trainer.train()
+
+\# Example: Predict on new messages
+
+def predict_new_messages(new_messages):
+
+    inputs = tokenize_and_encode(new_messages)
+
+    with torch.no_grad():
+
+        outputs = model(\*\*inputs)
+
+    return torch.nn.functional.softmax(outputs.logits, dim=-1)
+
+new_messages = \["I’m having a great time with some vodka and tequila",
+
+                "Just a normal chat without alcohol"\]
+
+predictions = predict_new_messages(new_messages)
+
+print(predictions)
+
+Extract and Add New Terms to LIWC Dictionary
+
+{r}
+
+\# Sample Python output (in practice, use real model output)
+
+new_terms_df \<- data.frame(
+
+  message = c("I’m having a great time with some vodka and tequila",
+
+              "Just a normal chat without alcohol"),
+
+  prediction_score = c(0.8, 0.1)
+
+)
+
+\# Filter messages with high prediction scores
+
+new_alcohol_messages \<- new_terms_df %\>%
+
+  filter(prediction_score \> 0.5)
+
+\# Extract new terms (simple tokenization example)
+
+new_terms \<- new_alcohol_messages %\>%
+
+  rowwise() %\>%
+
+  mutate(new_terms = str_extract_all(message, "[\\\\b\\\\w+\\\\b](file://b/w+/b)")) %\>%
+
+  unnest(new_terms) %\>%
+
+  filter(!new_terms %in% liwc_alcohol_terms) %\>%
+
+  pull(new_terms) %\>%
+
+  unique()
+
+\# Add new terms to LIWC dictionary (example)
+
+liwc_alcohol_terms \<- c(liwc_alcohol_terms, new_terms)
+
+print(liwc_alcohol_terms)

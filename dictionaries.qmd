@@ -1,0 +1,45 @@
+---
+title: "dictionaries.qmd"
+format: html
+editor: visual
+---
+
+## Dictionary based methods
+
+Our top dictionary based method is LIWC 2022. Manual here <https://www.liwc.app/help/psychometrics-manuals>. Note this is much better than our previous LIWC – Corpus now has 31 million words extrated from relevant text sources like Facebook personality quiz results, reddit comments, tweets
+
+LIWC returns the percentage of words in a document that match the following LIWC categories:
+
+![](images/Screenshot 2024-08-29 004135.png)
+
+![](images/Screenshot 2024-08-29 004405.png)
+
+![](images/Screenshot 2024-08-29 004521.png){width="972"}
+
+### Alcohol related words
+
+First LIWC category explored is identification of messages using words from the substances category. Process outlined below can also be applied to other relevant LIWC categories inferred from EDA (profane language, negative emotional intensity, externalizing language)
+
+1.  **Document level normalization**
+
+    Concatenating all text into a single document per user allows calculation of overall substance abuse language used across the past year for each user.
+
+    1.  Normalization: LIWC provides the count of words in the document that match their substances library / total number of words in the document.
+    2.  Considerations: This will be impacted by whether stop words are removed before or after this step. LIWC performs automatic symbol removal and capitalization normalization, with options for stemming and stop words within liwc..but probably better to do outside for more control
+
+2.  **Message level normalization**
+
+    3 approaches
+
+    1.  Get substance scores for all messages
+        -    Normalization: \[Count of substance words \* sqrt(total words in message)\] / total words in message. Prevents one word messages from having advantage
+        -   Aggregation: **:** Sum all normalized alcohol scores for each user and then divide by the total number of messages (including those with substance scores of 0).
+        -   **Advantages:** \\metric that reflects the overall presence of alcohol-related content relative to the user's total message volume, giving context to the substance-related density among all messages.
+        -   **Disadvantages:** It may be influenced by zero-inflation since messages without substance-related content contribute to the denominator, potentially diluting the score. Can consider using a log transformation or adding a small constant to avoid zero-inflation issues?
+    2.   Filter to only messages with substance score \> 0
+        -   Normalization: same as above, just only on substance word containg messages
+        -   Aggregation: **:** Sum all normalized substance scores for each user and then divide by the total number of substance word messages only. Or could multiply by total sub msgs since can't divide by zero if someone has no sub msgs.
+        -   **Advantages:** focuses exclusively on the messages that are relevant to AUD-related content
+        -   **Disadvantages:** If a user has no substance word messages, can lead to missing values or biases due to lack of data.
+    3.  Hybrid approach??
+        -   Could potentially combine two approaches as a composite score?

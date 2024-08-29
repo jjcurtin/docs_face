@@ -1,0 +1,76 @@
+---
+title: "feat_overview.qmd"
+format: html
+editor: visual
+---
+
+## Types of features
+
+1.   Linguistic Features
+    -    Frequency of Alcohol-Related Terms: Count the occurrences of words or phrases related to alcohol use.
+    -   Sentiment Analysis: Determine the overall sentiment (positive, negative, neutral) of messages. Emotional tone can be indicative of substance use disorders.
+    -   Emotion Detection: Identify specific emotions (e.g., sadness, anxiety, anger) expressed in messages.
+2.   Behavioral Patterns:
+    -   Temporal Patterns: Analyze message frequency and timing to identify irregular patterns or signs of distress.
+    -   Communication Style: Examine writing style, such as changes in verbosity, use of informal language, or erratic patterns.
+        -    Rather than changes within the individual, look at changes in aud vs non aud messages
+3.   **Social Features:**
+    -   **Interaction with Others:** Look at the frequency and nature of interactions with friends or other users, which can provide context about social behavior.
+    -   Consider filtering down to only "important"/ frequent conversations
+4.  **Contextual Features:**
+    -   **Contextual Keywords:** Identify discussions around stressful events, mental health issues, or other factors related to alcohol use.
+    -   **Topic Modeling:** Use techniques like Latent Dirichlet Allocation (LDA) to identify prevalent topics in the messages.
+5.  **Psycholinguistic Features**
+    -   **Language Complexity:** Measure the complexity of language used, such as sentence length and word diversity.
+    -   **Cognitive Distortions:** Look for patterns associated with cognitive distortions, such as all-or-nothing thinking or catastrophizing.
+
+## Message versus document level features
+
+Depending on the type of feature, we may have differing pre-processing steps for the data. This may include aggregation of messages across groups, filtering of messages within an individual, or differences in the type of text cleaning/preprocessing that make sense for different approaches.Here I keep track of ideas about levels:
+
+**Message level**
+
+Some features will be more useful at the level of the message, meaning a feature score is calculated for each individual message within a user (or defined subset of messages). These scores then may be aggregated within an individual or used on their own for message filtering.
+
+-   **Advantages:** Provides a detailed view by capturing the sentiment and topics of each message. Allows for normalization and analysis of sentiment or topics relative to the number of messages, giving a more granular understanding. Easier for EDA to gain insights at level of message due to increased interpretability.
+
+-   **Disadvantages:** Requires more complex aggregation and normalization to ensure that message volume differences do not skew results. Potentially more complex than needed for identification of broader trends.
+
+Ideas for message-level features include:
+
+1.   **Linguistic Features:**
+    -   **Alcohol-Related Terms:** The frequency and context of specific alcohol-related terms in individual messages can reveal immediate concerns or references.
+
+    -   **Sentiment and Emotion Analysis:** The sentiment or emotional tone of a single message might indicate acute states of distress or alcohol use. Changes in sentiment across messages could be significant.
+
+    -    Total number of alcohol/emotional messages within a user may be much more important than total number of alcohol/emotional words, etc
+2.   **Behavioral Patterns:**
+    -   **Temporal Patterns:** Identification of messaging frequency and timing (e.g. proportion of late night/weekend messages, etc
+3.   **Contextual Features:**
+    -   **Filtering by Keywords:** Identification of a subset of messages to extract features from (e.g. filter down to just messages containing alcohol words, just negative sentiment messages)can provide more temporally relevant insights into situational factors influencing alcohol use.
+4.  **Social Interactions:**
+    -   **Interaction Content:** The nature of replies or interactions within specific messages can provide insights into social dynamics and support structures.
+5.   Can choose to filter messages for feature extraction to just those with most frequent interaction, strongest sentiment, just convos where alcohol is mentioned, etc
+
+**Document level**
+
+The document refers to all of a user's past year messages concatenated into a single observation per participant.
+
+-   **Advantages:** Simplifies the analysis by summarizing a user’s entire message history into a single set of features. Useful for obtaining a high-level view of a user's overall sentiment or topic distribution.
+
+-   **Disadvantages:** May lose nuances present in individual messages and overlook variations in sentiment or topics across different messages. Loss of n-grams, negation, timing, etc.
+
+Ideas for doc level features:
+
+1.  **Linguistic Features:**
+    -   **Overall Frequency of Alcohol-Related Terms:** An aggregate count of alcohol-related terms across all messages can provide a broad view of how frequently alcohol is discussed within a person
+
+    -   **Overall Sentiment Trends:** Analyzing overall sentiment trends in the document can indicate more stable patterns in emotional states related to alcohol use.
+2.  **Behavioral Patterns:**
+    -   **Long-Term Temporal Patterns:** Patterns in message frequency over time can highlight chronic or long-term changes in behavior, such as increasing isolation or erratic communication.
+3.  **Contextual Features:**
+    -   **Topic Modeling:** Identifying prevalent topics in the aggregated document can provide insights into recurring themes or issues in aud vs non aud individs. Can then be used to guide future cleaning/extraction
+
+    -   **Cognitive Patterns:** Document-level analysis can reveal more stable cognitive distortions or language use patterns that are indicative of alcohol use disorder.
+4.  **Social Interactions:**
+    -   **Interaction Patterns:** Analyzing how interactions are in general for a user over time can reveal differences in social support or isolation, which may be related to alcohol use

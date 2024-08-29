@@ -1,0 +1,55 @@
+---
+title: "message_cleaning.qmd"
+format: html
+editor: visual
+---
+
+# Message Cleaning
+
+Here are text cleaning considerations – ongoing with eda and feature engineering
+
+1.  **Dimensionality reduction:**
+
+    Messages are filtered down to past year only, since AUD diagnoses are based on behavior in last 12 months. Can also consider filtering down to only user generated text, only text from conversations with at least N observations
+
+2.  **Auto-generated messages:**
+
+    Sarah implemented code to remove FB generated messages (e.g. "you are now connected on messenger", "\[NAME\] changed the name of the group." Might consider additional techniques for idetnification of promo messages/games/pasting of text from website or assignment
+
+3.  **Stop Words:**
+
+    -   **General Stop Words:** Removing common stop words like "the," "and," "is," might be appropriate, while removing stop words like "not" or "my" can change the meaning of a message. Many lists in R
+
+    -   **Custom Stop Words List:** Create a custom stop words list that excludes words crucial for understanding context or sentiment. List potential stop words to retain here: not, isn't, basically all negation, all personal pronouns,
+
+4.  **Misspellings:**
+
+```         
+-   **Spell Checking:** General spell correction libraries or tools to address frequent misspellings. While this helps in standardizing text, be cautious about over-correcting as it might alter the intended meaning. Consider using context-aware spell checkers that understand the common patterns in informal language (python only? no good examples for me yet)
+
+-   **Repeated letters:** Can normalize repeated letters to their base form to reduce the variability (e.g., "haha" and "hahahaha" both become "haha"). This helps in treating expressions with varying intensities uniformly, but may not be the case. Instead of removing repeated letters, could create a system that weights expressions based on their frequency or intensity (e.g., "haha" = vs. "hahahahahaha"). But likely not worth it?
+```
+
+5.  **Capitalization and Punctuation:**
+
+```         
+-   **Normalization:** Convert all text to lowercase to ensure uniformity. Can consider weighting capitalization as an emphasis (e.g. +1 in direction of sentiment)
+
+-   **Punctuation:** Can strip most punctuation – consider retaining punctuation with meaningful emphasis. e.g. amplifiers: !, \^, \>\>\>, all non emoji emoticons :) :( :/ etc
+```
+
+6.  **Emojis**
+
+    -   Emojis are retained as their International Emoji library definitions with "\_" for easy identification. Sarah has developed an emoji library to gather descriptions and basic sentiment analysis of all recognized emoji. Have expanded library with sentimentr emoji dictionary. Can also look into Python emoji packag for cross reference
+
+    -   Sentimentr and VADER (python sentiment package) provide polarity scores for emojis, but limited in emojis scored and limited to just providing sentiment of the emoji description
+
+    -   Pretrained sentiment model w emoji: investigate DeepMoji python package
+
+    -   More ideas in tune emoji
+
+7.  **Slang**
+
+    -   Some slang dictionaries do exist, but we will likely end up fine tuning a pretrained slang identifier. Need to do EDA to ensure slang words containing symbols should be retained – (e.g. n00b, b!tch). Potentially context aware spell checker will help here
+
+    -   Look into Python **Urban Dictionary API:** Provides definitions for modern slang terms. While there isn’t an official API, you can scrape data or use unofficial APIs to get slang definitions.

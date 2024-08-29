@@ -1,0 +1,195 @@
+---
+title: "llms.qmd"
+format: html
+editor: visual
+---
+
+## Large Language Models
+
+More recently developed large language models can outperform sentiment analysis and BERT topic modeling. Ones available to download pretrained embeddings (do not need api) are LLaMA and GPT2. Strengths of llms:
+
+-   **Handling Long Contexts:** Esp if we think our important messages are long threads. potential to understand context across multiple exchanges in convo
+
+-    **Capturing Evolving Language Use:** Newer models have been trained on data that contains modern slang. Additionally, more exposure to negation and nuanced sentiment at the level of the sentence.
+
+**Wider variety of concepts:** may lead to increased transparency of topic modeling
+
+### Process for using local vs api**:**
+
+**1. Set Up Local Environment**
+
+-   Need the transformers and torch libraries to run LLaMA models locally. Use a GPU for efficient processing if available.
+
+**Download LLaMA Model:** Best repository for my use is likely Hugging Face – easy accesibility and trained on internet content
+
+### **Using LLaMA transformers for message classification–**
+
+python
+
+import torch
+
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+import pandas as pd
+
+import numpy as np
+
+\# Load the LLaMA model (assuming LLaMA model is available and downloaded)
+
+model_name = "llama/3"  \# Replace with the correct model path or name
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+model = AutoModelForSequenceClassification.from_pretrained(model_name)
+
+\# Function to classify messages
+
+def classify_messages(messages):
+
+    inputs = tokenizer(messages, return_tensors="pt", truncation=True, padding=True)
+
+    with torch.no_grad():
+
+        outputs = model(\*\*inputs)
+
+    logits = outputs.logits
+
+    predictions = torch.softmax(logits, dim=-1).argmax(dim=-1)
+
+    return predictions.numpy()
+
+\# Sample messages
+
+messages = \["Drinking vodka tonight!", "Feeling great with a beer in hand",
+
+            "Partying with shots", "No alcohol here!", "Vodka and tequila", "Just a regular day"\]
+
+\# Classify messages
+
+predictions = classify_messages(messages)
+
+\# Create DataFrame with results
+
+classification_df = pd.DataFrame({
+
+    'message': messages,
+
+    'prediction': predictions
+
+})
+
+\# Print results
+
+print(classification_df)
+
+**R Code to Call Python Script**
+
+library(reticulate)
+
+\# Source Python script
+
+source_python("path/to/your/python_script.py")
+
+\# Fetch classification results
+
+classification_df \<- py\$classification_df
+
+\# Filter messages classified as relevant to alcohol
+
+relevant_messages \<- classification_df %\>%
+
+  filter(prediction == 1)  \# Adjust according to your model's output format
+
+### GPT workflow example**:**
+
+Perform Sentiment Analysis with GPT and LDA
+
+{python}
+
+from transformers import GPT2Tokenizer, GPT2Model
+
+import torch
+
+import pandas as pd
+
+\# Load GPT model and tokenizer
+
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+
+model = GPT2Model.from_pretrained('gpt2')
+
+def get_gpt_embeddings(texts):
+
+    inputs = tokenizer(texts, return_tensors='pt', padding=True, truncation=True)
+
+    outputs = model(\*\*inputs)
+
+    embeddings = outputs.last_hidden_state.mean(dim=1).detach().numpy()
+
+    return embeddings
+
+\# Example usage
+
+texts = \["I love this product!", "This is terrible."\]
+
+embeddings = get_gpt_embeddings(texts)
+
+Add GPT Embeddings to Data
+
+{r}
+
+\# Convert embeddings to data frame and merge with original data
+
+embeddings_df \<- as_tibble(embeddings, .name_repair = "minimal")
+
+df_with_embeddings \<- bind_cols(df, embeddings_df)
+
+\# Print first few rows with embeddings
+
+head(df_with_embeddings)
+
+Perform Topic Modeling
+
+{r}
+
+library(topicmodels)
+
+\# Prepare the data for LDA
+
+dtm \<- DocumentTermMatrix(Corpus(VectorSource(df_with_embeddings\$message)))
+
+\# Fit the LDA model
+
+lda_model \<- LDA(dtm, k = 5)  \# Assuming 5 topics; adjust as needed
+
+topics \<- tidy(lda_model, matrix = "beta")
+
+\# Print topics
+
+print(topics)
+
+Aggregate sentiment and topics by user--
+
+{r}
+
+\# Aggregate sentiment features by user
+
+user_sentiment \<- df_with_embeddings %\>%
+
+  group_by(user_id) %\>%
+
+  summarise(across(starts_with("embedding"), mean, .names = "mean\_{col}"))
+
+\# Aggregate topics by user
+
+user_topics \<- df_with_embeddings %\>%
+
+  group_by(user_id) %\>%
+
+  summarise(across(starts_with("topic"), mean, .names = "mean\_{col}"))
+
+\# Print aggregated results
+
+print(user_sentiment)
+
+print(user_topics)

@@ -1,0 +1,15 @@
+---
+title: "tune_emojis.qmd"
+format: html
+editor: visual
+---
+
+## Emoji tuning
+
+We can attempt to further tune emoji library by contextualizing emoji use within messages to infer meaning—
+
+**a.** Could use eyeball sample to review sample of messages of most frequently used emoji and assign sentiment (either ranked by me, or as an average of the sentiment scores of all messages using the emoji in eyeball sample)
+
+b\. Fine tune pretrained sentiment analysis model (e.g. VADER) on small subset of labeled msgs
+
+c\. Semisupervised approach – Use a small labeled dataset to train a model and then apply it to a larger unlabeled dataset (e.g. other social media data source) to label additional examples. Refine the model iteratively with the new labeled examples.
