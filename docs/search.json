@@ -4,119 +4,49 @@
     "href": "index.html",
     "title": "Study notebook for FACE",
     "section": "",
-    "text": "Welcome\nThis web book is a collection of general documentation, demostrations, and other supporting materials for the FACE Project and its related studies.",
+    "text": "Welcome to FACE!\nThis web book is a collection of general documentation, demonstrations, and other supporting materials for the FACE Project and its related studies.\nCurrent studies: -FB Messenger project. Sarah’s dissertation to predict AUD diagnoses from FB private message text. The full docs_face at this time pertains to this project, but larger FACE notes will be relevant for future projects.",
     "crumbs": [
-      "Welcome"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   },
   {
-    "objectID": "general_cleaning.html",
-    "href": "general_cleaning.html",
-    "title": "1  Methods",
-    "section": "",
-    "text": "these are notes",
+    "objectID": "index.html#study-overview",
+    "href": "index.html#study-overview",
+    "title": "Study notebook for FACE",
+    "section": "1.1 Study Overview",
+    "text": "1.1 Study Overview\nWe have collected data from 857 undergraduate students at the University of Wisconsin-Madison between May 2018 and August 2019. Students attended one hour long, in person study session during which they downloaded and provided copies of their personal Facebook profile that includes all their activity on Facebook from account inception until the day of this download (e.g., direct messages, posts, images, events, likes, groups). While their account was prepared and delivered for download, we conducedt a structured clinical interview with them to diagnosis current alcohol use disorder and a timeline follow-back interview to document episodes of binge drinking over the past 30 days. These interviews provide the two “labels” (outcomes) that we will use to train machine learning model classifiers for Aims 1 and 2 (i.e., positive vs. negative for current AUD and binge vs. no binge on each of the past thirty days).\nProject analysis will focus on extraction of a high-dimensional set of predictors (e.g., &gt;&gt; 50K predictors) from their social media activity through feature engineering approaches that include natural language processing and image analysis techniques. We will train and evaluate the performance of machine learning model classifiers that use these predictors within well-established statistical learning algorithms (e.g., elastic net regularized generalized linear models, support vector machines, neural networks, random forest) to classify each student as positive or negative for AUD (AIM 1) or classify each of the past 30 days for each student as a binge vs. no binge day (AIM 2). Final model selection and evaluation for each outcome will be accomplished by nested cross validation to provide an unbiased estimate of expected model performance in “held-out” samples (i.e., new students that were not used to train these models).",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Methods</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   },
   {
-    "objectID": "scid_cleaning.html",
-    "href": "scid_cleaning.html",
-    "title": "2  SCID Cleaning",
-    "section": "",
-    "text": "2.1 Inputs",
+    "objectID": "index.html#participants",
+    "href": "index.html#participants",
+    "title": "Study notebook for FACE",
+    "section": "1.2 Participants",
+    "text": "1.2 Participants\nWe collected data from 857 UW-Madison undergraduate students. Participants were recruited via mass email blasts to random samples of undergraduate students. The emails describe the opportunity to participate in a social media and health study and do not mention alcohol use. Prior to scheduling data collection, participants were screened to meet study inclusion criteria. Inclusion criteria for all participants include: 1) Currently enrolled as an undergraduate student at UW-Madison 2) Are at least 18 years old 3) Have a Facebook account and self-report of at least some interaction (e.g., posts, messages, passive viewing of content) with account in the past month. 4) Self-report of English as primary language for communications within Facebook\nDescriptive analyses from our sample demonstrate that we have a sufficient rate of AUD to train and evaluate models for AIM 1. We have documented 232 positive AUD diagnoses among our sample (27.1%) with strong interrater reliability (κ = .923, p &lt; .001). Only 1% of AUD positive students reported believing they had AUD prior to the in-session diagnostic interview, highlighting the inability of current efforts to inform students of their AUD risk. Equally important, were they to screen positive for AUD, 81% of our AUD positive students reported that they would be motivated to change their drinking, and 59% would consider seeking formal treatment services. This suggests that valid screening that reaches a large percentage of students with AUD could yield an important public health benefit.\nDescriptive data from this preliminary sample also documents that binges are frequent and that we have a sufficient number of binges to train and evaluate models for AIM 2. With respect to binge drinking, there were 3127 binge episodes reported (12.1% of all days). Approximately 78% of students reported at least one binge episode in the past month and 40.9% of students reported 4 or more binge episodes in the past month.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>SCID Cleaning</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   },
   {
-    "objectID": "scid_cleaning.html#inputs",
-    "href": "scid_cleaning.html#inputs",
-    "title": "2  SCID Cleaning",
-    "section": "",
-    "text": "_SS_SCID.csv files: One per subject. These are the graduate clinician’s scoring of SCID audio recordings from sessions. These scores serve as the final outcome labels for SCID diagnoses\nqualtrics_scid.csv: One aggregate file. Compiled responses of RA scid scores collected during session\n_NewSCID.xlsx files: Rescores of earlier scids by RAs due to updates made to scoring criteria during data collection. These files replace original qualtrics scores",
+    "objectID": "index.html#general-procedure",
+    "href": "index.html#general-procedure",
+    "title": "Study notebook for FACE",
+    "section": "1.3 General Procedure",
+    "text": "1.3 General Procedure\nStudents who respond to our email recruitment messages are pre-screened by phone for inclusion criteria and, if eligible, scheduled for a 1-hour visit to our laboratory. Students receive a detailed study overview, data confidentiality descriptions (e.g., local data encryption, certificate of confidentiality protections and limits), and confirm eligibility criteria before providing informed consent. Staff then guide students through downloading their Facebook. These Facebook downloads contain all social media activity for the student from account inception to date. This includes the following data sources: demographic and biographical data; interaction with ads, apps, and websites; authored and received comments, events, posts, and private messages; information about friend and follower requests, denials, and acceptances; likes and subscriptions to pages and groups; any posted photos, videos, or stories; Facebook generated profile descriptors; saved items and search history; security and login information; and lists of Facebook check ins and log in locations. Students next complete a short survey about perceptions of their AUD status and future intentions regarding treatment seeking and drinking behavior change. Following this, study staff administer the Structured Clinical Interview for DSM-V (SCID) and a 30-day Timeline follow-back for binge drinking, and they provide feedback to students regarding their AUD diagnosis. SCID interviews are audio recorded and reviewed by a graduate clinician to ensure interrater reliability. Before leaving, students are provided local treatment resources, debriefed, and paid $40 for their laboratory visit. AUD positive students will be paid an additional $10 for completing the follow-up online survey at 3 months.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>SCID Cleaning</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   },
   {
-    "objectID": "scid_cleaning.html#outputs",
-    "href": "scid_cleaning.html#outputs",
-    "title": "2  SCID Cleaning",
-    "section": "2.2 Outputs",
-    "text": "2.2 Outputs\n\n2.2.1 scid_labels.csv\nGenerated based on cleaning and combining all _SS_SCID files.\nData Dictionary:\nsubid: Subject ID number ranging from 001 - 1047. ID number used to identify all subject data EXCEPT social media data\nse0: SCID-V-Research Version Module E screening question (E1): Have you drank alcohol at least 6 times in the past 12 months? Answers: yes or no\nse1: SCID-V-Research Version Module E question 1 (E2): Alcohol is often taken in larger amounts OR over a longer period than was intended. Answers: yes or no\nse2: SCID-V-Research Version Module E question 2 (E3): There is a persistent desire OR unsuccessful efforts to cut down or control alcohol use. Answers: yes or no\nse3: SCID-V-Research Version Module E question 3 (E4): A great deal of time is spent in activitiesnecessary to obtain alcohol, use alcohol, or recover from its effects. Answers: yes or no\nse4: SCID-V-Research Version Module E question 4 (E5): Craving, or a strong desire or urge to use alcohol. Answers: yes or no\nse5: SCID-V-Research Version Module E question 5 (E6): Recurrent alcohol use resulting in a failure to fulfill major role obligations at work, school, or home [(e.g., repeated absences or poor work performance related to alcohol use; alcohol-related absences, suspensions, or expulsions from school; neglect of children or household)]. Answers: yes or no\nse6: SCID-V-Research Version Module E question 6 (E7): Continued alcohol use despite having persistent or recurrent social or interpersonal problems caused or exacerbated by the effects of alcohol [(e.g., arguments with spouse about consequences of intoxication, physical fights)]. Answeres: yes or no\nse7: SCID-V-Research Version Module E question 7 (E8): Important social, occupational, or recreational activities given up or reduced because of alcohol use. Answers: yes or no\nse8: SCID-V-Research Version Module E question 8 (E9): Recurrent alcohol use in situations in which it is physically hazardous [(e.g., driving an automobile or operating a machine when impaired by alcohol use)]. Answers: yes or no\nse9: SCID-V-Research Version Module E question 9 (E10): Alcohol use is continued despite knowledge of having a persistent or recurrent physical or psychological problem that is likely to have been caused or exacerbated by alcohol [(e.g., continued drinking despite recognition that an ulcer was made worse by alcohol consumption)]. Answers: yes or no\nse10: SCID-V-Research Version Module E question 10 (E11): Tolerance, as defined by either of the following: a. A need for markedly increased amounts of alcohol to achieve intoxication or desired effect. b. Markedly diminished effect with continued use of the same amount of alcohol. Answers: yes or no\nse11: SCID-V-Research Version Module E question 11 (E12): Withdrawal, as manifested by either of the following: a. At least TWO of the following developing within several hours to a few days after the cessation of (or reduction in) alcohol use: autonomic hyperactivity (e.g., sweating or pulse rate greater than 100 bpm), increased hand tremor, insomnia, nausea or vomiting, psychomotor agitation, anxiety, generalized tonic-clonic seizures, transient visual, tactile, or auditory hallucinations or illusions b. Alcohol (or a closely related substance such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms. Answers: yes or no\ntotal: The total count of “yes” responses for a participant on items se1 - se11. Possible range: 0 - 11. Total calculated in mak_scid.Rmd\naud: A binary positive/negative variable indicating if a participant is positive or negative for Alcohol Use Disorder. Presence of 2 or more symptoms (total variable &gt;= 2) results in a positive label\nseverity: A four level factor denoting the severity of alcohol use disorder. Levlels are: Negative (Participant does not meet criteria for AUD, total score &lt;=1), Mild (total score = 2 or 3), Moderate (total score = 4 or 5), and Severe (total score &gt;= 6).\n\n\n2.2.2 Interrater reliability\nGenerated based on comparing _SS_SCID scores with RA scores from qualtrics (or _NewSCID) files\nData Dictionary:\nSame as above, but also including ra scores (ra variables are preceded by “ra_” e.g. ra_se0, ra_se1…)",
+    "objectID": "index.html#measures",
+    "href": "index.html#measures",
+    "title": "Study notebook for FACE",
+    "section": "1.4 Measures",
+    "text": "1.4 Measures\n\n1.4.1 Structured Clinical Interview for DSM-5 (SCID).\nThe SCID is a commonly used, semi-structured interview for psychiatric diagnosis34. Study staff assess students for current AUD using Module E (for substance use disorders) of the SCID which contains 11 items assessing the DSM-5 symptoms for AUD. Students meeting any 2 of the 11 symptoms within the past 12-months are classified as positive for AUD. AUD severity can be categorized as mild (reporting 2-3 symptoms), moderate (4-5 symptoms) or severe (6 or more symptoms). Independent diagnoses are provided by a second staff member based on audio recording of the SCID to allow us to calculate inter-rater reliability for diagnoses. For AIM 1, we will train and evaluate a machine learning model to classify students as positive (2 or more symptoms) or negative for AUD. However, by collecting raw symptom level data for AUD, we will also be able to train and evaluate classifiers for ordinal AUD severity (negative, mild, moderate, or severe) or regression models for raw total symptom counts. We focus on the binary (positive vs. negative) classifier in AIM 1 because we believe that early screening for even mild AUD allows the opportunity for students to seek services or behavior change prior to more severe manifestations of the disorder.\n###Timeline Followback (TLFB). The TLFB is a commonly used drinking assessment to obtain estimates of daily drinking within a specified time period35. This assessment has been shown to have high reliability across multiple populations of drinkers and is a useful tool when relatively precise estimates of drinking are required36. The current project uses the TLFB to assess specific instances of binge drinking (defined as consumption of 4 or more drinks within a drinking session for women or 5 or more drinks within a session for men) for each of the past 30 days. For AIM 2, we will train and evaluate a machine learning model to make temporally precise day-by-day predictions of binge vs. no binge for students.\n###Alcohol Insight Questionnaire. At the beginning of the session, participants answer a set of face valid questions regarding their beliefs about their current AUD status, their interaction with AUD screening processes to date, and perceived likelihood to take various actions if they knew they had an AUD (e.g. seeking treatment, changing drinking behaviors). We use these questions as a benchmark for current screening efforts and a measure of the potential impact of providing AUD feedback to students.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>SCID Cleaning</span>"
-    ]
-  },
-  {
-    "objectID": "scid_cleaning.html#ss_scid-files---final-labels",
-    "href": "scid_cleaning.html#ss_scid-files---final-labels",
-    "title": "2  SCID Cleaning",
-    "section": "3.1 _SS_SCID files -> final labels",
-    "text": "3.1 _SS_SCID files -&gt; final labels\n\nThree subjects (092, 412, 509) were missing SCID audio recordings and could not be independently scored by Sarah. _SCID_SS scoring files for these three participants are copies of the qualtrics responses for these sessions. Questions: Should I delete SS files for these and just fill them in from qualtrics in cleaning? How to handle these in reliability analysis?\nSarah did not always enter Total Scores in spreadsheet. This variable was instead calculated in mak_scid.Rmd\nAll SS files were confirmed to use correct scoring (1, 3) recoded to yes/no for each symptom in cleaning",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>SCID Cleaning</span>"
-    ]
-  },
-  {
-    "objectID": "scid_cleaning.html#qualtrics-and-new_scid-files",
-    "href": "scid_cleaning.html#qualtrics-and-new_scid-files",
-    "title": "2  SCID Cleaning",
-    "section": "3.2 Qualtrics and new_scid files",
-    "text": "3.2 Qualtrics and new_scid files\n\n3.2.1 Data type errors\n\nSubid 754. RA reported they incorrectly entered survey as fake/training data during real session. Updated to “Real”\n\n\n\n3.2.2 SubID errors\nSubIDS entered as SMIDS (corrected to subid by looking up match in id_xlsx) * 285953 corrected to 292 * 668698 corrected to 375 * 165500 corrected to 410 * 913773 corrected to 482 * 285953 corrected to 292 * 668698 corrected to 375 * 165500 corrected to 410 * 913773 corrected to 482\nDuplicate subids. Corrections to find true subid for sessions was done by matching session time, calendar session, RA notes, and ID tracker. All corrections done by SS\n\n870 (not real subid) corrected to 863\n029 with start_date==“2018-06-08 19:52:58” corrected to 026\n325 with start_date==“2018-08-31 17:28:55” corrected to 320\n723 with start_date==“2019-03-15 17:24:12”corrected to 727\n\n\n\n3.2.3 Invalid responses\n6 qualtrics surveys had answers that were not 1 or 3. For all 7 cases with invalid responses, SS reviewed SCID scoring protocol document and scored these items as 1 or 3\n```",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>SCID Cleaning</span>"
-    ]
-  },
-  {
-    "objectID": "fb_cleaning.html",
-    "href": "fb_cleaning.html",
-    "title": "3  These are notes related to extracting and cleaning Facebook data",
-    "section": "",
-    "text": "3.1 Unzipping problems\nSome files were unable to be unzipped due to corrupt file format\nSMIDS with known problems unzipping data: 706424, 398020, 701927, 145406, 114589, 434728, 808900, 169655, 138929, 398220",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>These are notes related to extracting and cleaning Facebook data</span>"
-    ]
-  },
-  {
-    "objectID": "fb_cleaning.html#smids-with-missinglow-amount-of-fb-data",
-    "href": "fb_cleaning.html#smids-with-missinglow-amount-of-fb-data",
-    "title": "3  These are notes related to extracting and cleaning Facebook data",
-    "section": "3.2 SMIDs with missing/low amount of FB data",
-    "text": "3.2 SMIDs with missing/low amount of FB data\n706424 – missing Social media? FB is for sure gone (never came into download resched) but session form indicates insta download 398220 only photos and videos 10/26/2018 701927 only photos and vids 10.26.18 145406 only photos and videos 10/31/2018 114589 only photo and vids 10/30/18 434728 only photos and vids 10.31.2018 913773 19 items…probably ok? keep an eye on for processing. 11.2.2018 141890 19 items 11.14.2018 keep 988738 - 18 items 2.1.2019 keep 582911 17 items 2.1.2019 – this likely looks like someone who doesn’t use FB that much and potentially deleted their messages before coming in. Keep? 808900 - No Facebook 11.8.2018 169655 No FB 11.16.2018 138929 just messages 1.24.2019",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>These are notes related to extracting and cleaning Facebook data</span>"
-    ]
-  },
-  {
-    "objectID": "raw_data.html",
-    "href": "raw_data.html",
-    "title": "4  Raw data notes",
-    "section": "",
-    "text": "5 Study folders and files\nRaw (i.e. unprocessed, has not been reduced or altered in any way) data for each participant lives in THREE locations:",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Raw data notes</span>"
-    ]
-  },
-  {
-    "objectID": "raw_data.html#raw-social-media-data",
-    "href": "raw_data.html#raw-social-media-data",
-    "title": "4  Raw data notes",
-    "section": "5.1 Raw social media data",
-    "text": "5.1 Raw social media data\nAll downloads of Facebook, plus Instagram or Twitter if they have them lives in P: * This data is stored SEPARATELY from all other study data to protect data privacy * This data is labeled as the subjects Social Media ID number (SMID), which is a randomly generated 6 digit number.\nMissing/unexpected files Social Media folder completely empty * SMID 706424  No Facebook? Other SM data present  SMID 808900 * SMID 169655",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Raw data notes</span>"
-    ]
-  },
-  {
-    "objectID": "raw_data.html#individual-subject-raw-data",
-    "href": "raw_data.html#individual-subject-raw-data",
-    "title": "4  Raw data notes",
-    "section": "5.2 Individual subject raw data",
-    "text": "5.2 Individual subject raw data\nSCID recordings, graduate clinician scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047).\nMissing/unexpected files: SJS permanently deleted folder for subid 471 1/2024 due to folder being empty. Confirmed via checking session notes that subject discontinued and did not complete the session, folder should have been deleted day of session\nEvery subject folder should include:\n\n5.2.1 _SCID.wav\nAudio recording of the SCID administered during the study visit (used for label validation) Data cleaning notes:\n* 3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels * 092 has note in data_raw stating recording was forgotten. _SS file is currently a copy of the RA review – should it be missing? * 412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)\n\n355 recording exists but was saved as .3gp instead of .wav file. No issues listening to recording\n\n\n5.2.1.1 _TLFB.csv\nFile listing all past month binge drinking days reported during the timeline follow-back completed in session. Paper copies of the timeline followback exist in the locked study file cabinet. Data cleaning notes: * 811 missing tlfb, but has drank in the past month so should have one. No notes in session form. * 3/2024 Physical TLFB file exists for this subject. SS created a TLFB .csv file for this subject using the raw data file.\n####_SCID_SS.csv File of the graduate clinician (Sarah Sant’Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).\nData cleaning notes: * Three subjects (092, 412, 509) were missing SCID audio recordings and could not be independently scored by Sarah. _SCID_SS scoring files for these three participants are copies of the qualtrics responses for these sessions. Questions: Should I delete SS files for these and just fill them in from qualtrics in cleaning? How to handle these in reliability analysis? * First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to avoid later confusion (it is 6 times in last 12 months) 3/2024 *3/5: Sarah resaved all _SS files as .csv files (older files were .xlsx)\nOther files that MAY exist in raw data subject folders include:\n####_SCIDReview.csv These files were early reviews of SCIDs done by SS or lead undergraduate RAs to identify early SCID scoring issues to be discussed in session. These files do NOT replace any existing SCID scoring. If changes were made to scoring based on review, subjects will have a new_scid file in their folder * All happened early in data collection - scid recordings in May - June 2018. Flagged by questionable scoring brought up during weekly meetings. * All reviews completed june - august 2018 * All files have accompanying _SS files with later score dates * SS is considering moving these all to a separate administrative folder?\n####_NewSCID.csv These are updates to scid scoring procedures that were made after a number of questions from initial data collection. The changes were implemented 7/12/2018. For full details on scoring, see methods &gt; Measures &gt; SCID_Scoring decisions. Briefly, we clarified cutoffs for the frequency of serious (2 or more past year) vs less serious (monthly) consequences for items 6, 7, and 9. * New SCID files are RA corrections to their qualtrics reported SCID scores. THESE FILES REPLACE THE EXISTING RA SCID VALUES. * Most were in response to earlier SCID review, final 4 were identified in weekly meeting and identified for rescoring.\n\n\n\n5.2.2 Aggregate session data collected in qualtrics\nQualtrics data is downloaded from qualtrics and stored as csv files in the root of P:_raw. Qualtrics data includes:\n\n5.2.2.1 qualtrics_id_battery.csv\nParticipants completion of study questionnaires (demographics survey, AUDIT, YAACQ, alcohol insight questions)\n\n\n5.2.2.2 qualtrics_scid.csv\nRA scoring of SCIDs in session",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Raw data notes</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   }
 ]
