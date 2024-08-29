@@ -10,6 +10,50 @@ This web book is a collection of general documentation, demonstrations, and othe
 
 Current studies: -FB Messenger project. Sarah's dissertation to predict AUD diagnoses from FB private message text. The full docs_face at this time pertains to this project, but larger FACE notes will be relevant for future projects.
 
+# AIMS and significance
+
+Processing of social media data to assst in identification of mental health has gained popularity in recent years. However, despite many papers citing high performance in classification of mental health disorders as well as specific symptoms within these disorders, many approaches have lacked rigor is both outcome labelig and fair courcing of materials that limits the generalizability of findings. Moreover, it is rare for prediction papers to explore features to guide theoretical ad clinical implications of the resarcprimarily due to the nature of public platforms and the shortcomings in preprocessing and theoretical grounding. Predominantly, existing methods utilize data from public posts on platforms like Twitter and Facebook. These approaches are often hindered by various challenges, such as reduced accuracy due to the inherent stigma associated with sensitive topics like substance use disorders. The stigma surrounding substance use can lead individuals to avoid discussing their issues openly on public forums, thereby limiting the data available for training and validation of predictive models.
+
+This project aims to address these limitations by developing and evaluating a machine learning algorithm specifically designed to diagnose Alcohol Use Disorder (AUD) from private Facebook messages. Private messages on Facebook offer a unique advantage over public posts: they are more likely to contain candid discussions about personal issues, including substance use disorders. This increased privacy may lead to more accurate and reliable data for training models, as individuals may feel more comfortable disclosing sensitive information in a private setting.
+
+**Specific Aims:**
+
+1.  **Develop and Evaluate a Machine Learning Algorithm for Diagnosing AUD from Private Facebook Messages:** We will design a machine learning model tailored to analyze and classify private Facebook messages to detect signs of AUD. This approach capitalizes on the candid nature of private messaging, potentially yielding more accurate results than public posts.
+
+2.  **Identify Top Linguistic Predictors of AUD:** We will evaluate and identify key linguistic features that distinguish messaging patterns of individuals with AUD from those without. This includes analyzing differences in the frequency and context of alcohol-related language and other relevant linguistic indicators.
+
+3.  **Utilize LLMs and Semi-Supervised Learning to Adapt Sentiment Analysis Approaches:** We will apply large language models (LLMs) and semi-supervised learning techniques to refine existing sentiment analysis and dictionary-based approaches. The goal is to enhance the models’ ability to process and classify private message data effectively, improving the identification of significant messages and overall AUD classification accuracy.
+
+Significance
+
+1.  Limitations of current text analysis of social media in mental health domains
+
+    -   Lack of clinically identified outcomes
+
+    -   Lack of realistic variety in message types (e.g. only classifying keyword messages or positive users)
+
+    -   Lack of theoretical expertise in designing and understanding of predictive features. Example how alorithms have significantly increased in ability to detect SI messages, but not reduce SI outcomes. Crucial to look at driving predictions and context of what we are using to predict to inform treatment and identify variability in outcome behavior
+
+    -   Lack of reporting transparency and clear definition of outcomes. No text preprocessing guidelines
+
+    -   Lack of combining both top down and bottom up approaches
+
+    -   Moreover, existing models frequently suffer from problems in text preprocessing and feature extraction. For instance, inconsistencies in text preprocessing can affect the presence or absence of function words, which are critical for accurate classification and sentiment analysis. Additionally, many methods lack theoretical and clinical rigor, leading to inaccuracies and reduced reliability in detecting mental health conditions from social media data. The underrepresentation of substance use disorders, due to their sensitive nature, exacerbates these issues.
+
+2.  Need for increased screening and insight into alcohol use disorders
+
+    We propose to address the limitations of contemporary natural language processing of social media for mental health related outcomes via our large sample of clinically diagnosed undergraduates with and without AUD paired with data previously unused in any social media prediction of mental health outcomes – private message communications.
+
+    Substance use disorders, particularly Alcohol Use Disorder (AUD), remain significantly underrepresented in social media-based mental health research due to the stigma surrounding these issues. Traditional social media data sources often fail to capture the true scope of substance use problems because users are less likely to discuss such topics openly in public forums. This gap in data can lead to reduced classification accuracy and a lack of reliable tools for diagnosis and intervention.
+
+3.  Match of the current project to address these limitations
+
+    By focusing on private Facebook messages, our project aims to harness a more accurate and nuanced data source for detecting AUD. The advantages of private messages include higher rates of candid communication and a more representative sample of individuals who may otherwise refrain from disclosing sensitive information publicly. This approach will not only improve the accuracy of AUD detection but also contribute to a better understanding of linguistic markers associated with substance use disorders.
+
+    Our project will address key shortcomings in current social media-based mental health screening methods, including the lack of theoretical grounding and rigorous validation. By developing a pipeline that combines advanced machine learning techniques with theoretical insights into language use and sentiment analysis, we aim to create a robust, clinically relevant tool for diagnosing AUD. This initiative has the potential to significantly enhance the efficacy of digital mental health interventions, providing valuable insights and early detection capabilities that can inform timely and targeted clinical interventions.
+
+    Ultimately, this project will advance the field of social media-based mental health research by offering a more accurate and theoretically grounded approach to detecting AUD, paving the way for future studies and applications in substance use disorder diagnostics and treatment.
+
 # Methods
 
 ## Study Overview
