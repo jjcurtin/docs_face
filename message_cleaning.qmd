@@ -1,10 +1,8 @@
 ---
-title: "message_cleaning.qmd"
+title: "Message cleaning"
 format: html
 editor: visual
 ---
-
-# Message Cleaning
 
 Here are text cleaning considerations – ongoing with eda and feature engineering
 

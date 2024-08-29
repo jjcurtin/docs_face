@@ -1,14 +1,12 @@
 ---
-title: "topic_modeling.qmd"
+title: "Topic modeling"
 format: html
 editor: visual
 ---
 
-## Topic modeling
-
 Consider topic modeling to identify bottom up patterns in messages. Use to guide EDA for differences between AUD groups. Traditional topic modeling is not suited for short form messaging, so I will look at clustering of pretrained embeddings in my data
 
-BERT – Bidirectional Encoder Representations from Transformers
+## BERT – Bidirectional Encoder Representations from Transformers
 
 -   Method - takes in a text, tokenizes it into a sequence of tokens, add in optional special tokens, and applies a Transformer encoder. The hidden states of the last layer are the contextual word embeddings.
 

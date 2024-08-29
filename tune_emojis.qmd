@@ -1,10 +1,8 @@
 ---
-title: "tune_emojis.qmd"
+title: "Emoji tuning"
 format: html
 editor: visual
 ---
-
-## Emoji tuning
 
 We can attempt to further tune emoji library by contextualizing emoji use within messages to infer meaning—
 

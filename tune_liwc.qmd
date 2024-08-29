@@ -1,10 +1,10 @@
 ---
-title: "tune_liwc.qmd"
+title: "LIWC tuning"
 format: html
 editor: visual
 ---
 
-## Fine tuning LIWC dictionaries
+These notes describe a process for expanding and fine tuning existing LIWC categories using embeddings derived from my social media data.
 
 **Overview of the approach using substance category example**
 
@@ -12,9 +12,9 @@ editor: visual
 
 2.  **Calculate Normalized Alcohol Scores:** Compute normalized alcohol scores for these identified messages.
 
-3.   **Use BERT or LLM for Contextual Analysis:** Train a model to identify similar messages that might contain new, relevant alcohol-related terms.
+3.  **Use BERT or LLM for Contextual Analysis:** Train a model to identify similar messages that might contain new, relevant alcohol-related terms.
 
-4.   **Extract and Add New Terms:** Extract new terms from these identified messages and add them to the LIWC dictionary.
+4.  **Extract and Add New Terms:** Extract new terms from these identified messages and add them to the LIWC dictionary.
 
 **Quarto Document with R and Python Code**
 
@@ -22,13 +22,13 @@ Here’s a sample Quarto document that combines R and Python code to accomplish 
 
 Markdown
 
----
+------------------------------------------------------------------------
 
 title: "Expand LIWC Dictionary with New Alcohol-Related Terms"
 
 format: html
 
----
+------------------------------------------------------------------------
 
 \## Load Libraries and Data
 

@@ -1,20 +1,18 @@
 ---
-title: "llms.qmd"
+title: "Large language models"
 format: html
 editor: visual
 ---
 
-## Large Language Models
-
-More recently developed large language models can outperform sentiment analysis and BERT topic modeling. Ones available to download pretrained embeddings (do not need api) are LLaMA and GPT2. Strengths of llms:
+More recently developed large language models (LLMs) can outperform sentiment analysis and BERT topic modeling. Ones available to download pretrained embeddings (do not need api) are LLaMA and GPT2. Strengths of llms:
 
 -   **Handling Long Contexts:** Esp if we think our important messages are long threads. potential to understand context across multiple exchanges in convo
 
--    **Capturing Evolving Language Use:** Newer models have been trained on data that contains modern slang. Additionally, more exposure to negation and nuanced sentiment at the level of the sentence.
+-   **Capturing Evolving Language Use:** Newer models have been trained on data that contains modern slang. Additionally, more exposure to negation and nuanced sentiment at the level of the sentence.
 
-**Wider variety of concepts:** may lead to increased transparency of topic modeling
+-   **Wider variety of concepts:** may lead to increased transparency of topic modeling
 
-### Process for using local vs api**:**
+### Local vs api**:**
 
 **1. Set Up Local Environment**
 

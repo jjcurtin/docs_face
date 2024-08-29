@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; sentiment.qmd – Study notebook for FACE</title>
+<title>8&nbsp; Sentiment analysis – Study notebook for FACE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./feat_overview.html">Feature Engineering</a></li><li class="breadcrumb-item"><a href="./sentiment.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">sentiment.qmd</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./feat_overview.html">Feature Engineering</a></li><li class="breadcrumb-item"><a href="./sentiment.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sentiment analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -129,19 +129,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.qmd</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Raw data notes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data structure</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./outcome_labels.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">SCID Cleaning</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Outcome Labels</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -153,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./message_cleaning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">message_cleaning.qmd</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Message cleaning</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -168,19 +168,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./feat_overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">feat_overview.qmd</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Feature overview</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dictionaries.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">dictionaries.qmd</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dictionary based methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sentiment.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">sentiment.qmd</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sentiment analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -192,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./llms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">llms.qmd</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Large language models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -219,21 +219,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#basic-sentiment-analysis" id="toc-basic-sentiment-analysis" class="nav-link active" data-scroll-target="#basic-sentiment-analysis"><span class="header-section-number">9</span> Basic sentiment analysis</a>
+  <li><a href="#basic-sentiment-analysis" id="toc-basic-sentiment-analysis" class="nav-link active" data-scroll-target="#basic-sentiment-analysis"><span class="header-section-number">8.1</span> Basic sentiment analysis</a>
   <ul class="collapse">
-  <li><a href="#word-level-sentiment-analysis-lexicons" id="toc-word-level-sentiment-analysis-lexicons" class="nav-link" data-scroll-target="#word-level-sentiment-analysis-lexicons"><span class="header-section-number">9.0.1</span> Word level sentiment analysis lexicons</a></li>
-  <li><a href="#sentence-level-sentiment-analysis-lexicons" id="toc-sentence-level-sentiment-analysis-lexicons" class="nav-link" data-scroll-target="#sentence-level-sentiment-analysis-lexicons"><span class="header-section-number">9.0.2</span> Sentence level sentiment analysis lexicons</a></li>
+  <li><a href="#word-level-sentiment-analysis-lexicons" id="toc-word-level-sentiment-analysis-lexicons" class="nav-link" data-scroll-target="#word-level-sentiment-analysis-lexicons"><span class="header-section-number">8.1.1</span> Word level sentiment analysis lexicons</a></li>
+  <li><a href="#sentence-level-sentiment-analysis-lexicons" id="toc-sentence-level-sentiment-analysis-lexicons" class="nav-link" data-scroll-target="#sentence-level-sentiment-analysis-lexicons"><span class="header-section-number">8.1.2</span> Sentence level sentiment analysis lexicons</a></li>
   </ul></li>
-  <li><a href="#advanced-sentiment-analysis" id="toc-advanced-sentiment-analysis" class="nav-link" data-scroll-target="#advanced-sentiment-analysis"><span class="header-section-number">10</span> Advanced Sentiment analysis</a></li>
+  <li><a href="#advanced-sentiment-analysis" id="toc-advanced-sentiment-analysis" class="nav-link" data-scroll-target="#advanced-sentiment-analysis"><span class="header-section-number">8.2</span> Advanced Sentiment analysis</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jjcurtin/notes_face/edit/main/sentiment.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./feat_overview.html">Feature Engineering</a></li><li class="breadcrumb-item"><a href="./sentiment.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">sentiment.qmd</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./feat_overview.html">Feature Engineering</a></li><li class="breadcrumb-item"><a href="./sentiment.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sentiment analysis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">sentiment.qmd</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sentiment analysis</span></h1>
 </div>
 
 
@@ -250,11 +250,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="basic-sentiment-analysis" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Basic sentiment analysis</h1>
+<section id="basic-sentiment-analysis" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="basic-sentiment-analysis"><span class="header-section-number">8.1</span> Basic sentiment analysis</h2>
 <p>Notes about different basic sentiment analysis techniques explored and future directions</p>
-<section id="word-level-sentiment-analysis-lexicons" class="level3" data-number="9.0.1">
-<h3 data-number="9.0.1" class="anchored" data-anchor-id="word-level-sentiment-analysis-lexicons"><span class="header-section-number">9.0.1</span> Word level sentiment analysis lexicons</h3>
+<section id="word-level-sentiment-analysis-lexicons" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="word-level-sentiment-analysis-lexicons"><span class="header-section-number">8.1.1</span> Word level sentiment analysis lexicons</h3>
 <p>Three popular unigram lexicons for word-level sentiment analysis with tidyr –</p>
 <ol type="1">
 <li>NRC: binary word categorization (“yes”/“no”) into categories of positive, negative, anger, anticipation, disgust, fear, joy, sadness, surprise, and trust. Words can have multiple entries if assigned to multiple sentiments. Small degree of word stemming. -6453 unique words</li>
@@ -264,8 +264,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Can consider reducing all to just positive vs negative sentiment and combining words to maximize dictionary</p>
 <p>No obvious differences in effectiveness of one dictionary vs another in EDA</p>
 </section>
-<section id="sentence-level-sentiment-analysis-lexicons" class="level3" data-number="9.0.2">
-<h3 data-number="9.0.2" class="anchored" data-anchor-id="sentence-level-sentiment-analysis-lexicons"><span class="header-section-number">9.0.2</span> Sentence level sentiment analysis lexicons</h3>
+<section id="sentence-level-sentiment-analysis-lexicons" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="sentence-level-sentiment-analysis-lexicons"><span class="header-section-number">8.1.2</span> Sentence level sentiment analysis lexicons</h3>
 <p>Sentimentr package assigns polarity at the level of the sentence, taking into account amplifiers/valence shifting words (e.g.&nbsp;really, not). Can customize dictionary or valence words and pass arguments indiciating how far before/after a polarized word that valence shifters should function. Multiple dictionaries available in lexicon package including:</p>
 <ul>
 <li><p><em>Combined Jockers_rinker</em> -default of sentimentr - combined and augmented version of Jockers (2017) &amp; Rinker’s augmented Hu &amp; Liu (2004) positive/negative word list - 11,710 unique words with polarity ranges from -2 to 1 (why?)</p></li>
@@ -278,8 +278,8 @@ ul.task-list li input[type="checkbox"] {
 <p><em>Zac Anger Profanity words</em> -3076 profane words -no sentiment but could be used in combo with face bad words? They look good</p>
 </section>
 </section>
-<section id="advanced-sentiment-analysis" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Advanced Sentiment analysis</h1>
+<section id="advanced-sentiment-analysis" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="advanced-sentiment-analysis"><span class="header-section-number">8.2</span> Advanced Sentiment analysis</h2>
 <p>Traditional approaches may not do well do to short form and informal language in msgs. Can consider –</p>
 <ul>
 <li><p><strong>Pre-Trained Models:</strong></p>
@@ -716,8 +716,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./dictionaries.html" class="pagination-link" aria-label="dictionaries.qmd">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">dictionaries.qmd</span></span>
+      <a href="./dictionaries.html" class="pagination-link" aria-label="Dictionary based methods">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dictionary based methods</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -1,20 +1,20 @@
 ---
-title: "dictionaries.qmd"
+title: "Dictionary based methods"
 format: html
 editor: visual
 ---
 
-## Dictionary based methods
+## Linguistic Inventory and Word Count LIWC
 
 Our top dictionary based method is LIWC 2022. Manual here <https://www.liwc.app/help/psychometrics-manuals>. Note this is much better than our previous LIWC – Corpus now has 31 million words extrated from relevant text sources like Facebook personality quiz results, reddit comments, tweets
 
 LIWC returns the percentage of words in a document that match the following LIWC categories:
 
-![](images/Screenshot 2024-08-29 004135.png)
+![](images/Screenshot%202024-08-29%20004135.png)
 
-![](images/Screenshot 2024-08-29 004405.png)
+![](images/Screenshot%202024-08-29%20004405.png)
 
-![](images/Screenshot 2024-08-29 004521.png){width="972"}
+![](images/Screenshot%202024-08-29%20004521.png){width="972"}
 
 ### Alcohol related words
 
@@ -32,7 +32,7 @@ First LIWC category explored is identification of messages using words from the 
     3 approaches
 
     1.  Get substance scores for all messages
-        -    Normalization: \[Count of substance words \* sqrt(total words in message)\] / total words in message. Prevents one word messages from having advantage
+        -   Normalization: \[Count of substance words \* sqrt(total words in message)\] / total words in message. Prevents one word messages from having advantage
         -   Aggregation: **:** Sum all normalized alcohol scores for each user and then divide by the total number of messages (including those with substance scores of 0).
         -   **Advantages:** \\metric that reflects the overall presence of alcohol-related content relative to the user's total message volume, giving context to the substance-related density among all messages.
         -   **Disadvantages:** It may be influenced by zero-inflation since messages without substance-related content contribute to the denominator, potentially diluting the score. Can consider using a log transformation or adding a small constant to avoid zero-inflation issues?

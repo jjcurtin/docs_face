@@ -1,22 +1,15 @@
 ---
-title: "feat_overview.qmd"
+title: "Feature overview"
 format: html
 editor: visual
 ---
 
 ## Types of features
 
-1.   Linguistic Features
-    -    Frequency of Alcohol-Related Terms: Count the occurrences of words or phrases related to alcohol use.
-    -   Sentiment Analysis: Determine the overall sentiment (positive, negative, neutral) of messages. Emotional tone can be indicative of substance use disorders.
-    -   Emotion Detection: Identify specific emotions (e.g., sadness, anxiety, anger) expressed in messages.
-2.   Behavioral Patterns:
-    -   Temporal Patterns: Analyze message frequency and timing to identify irregular patterns or signs of distress.
-    -   Communication Style: Examine writing style, such as changes in verbosity, use of informal language, or erratic patterns.
-        -    Rather than changes within the individual, look at changes in aud vs non aud messages
-3.   **Social Features:**
-    -   **Interaction with Others:** Look at the frequency and nature of interactions with friends or other users, which can provide context about social behavior.
-    -   Consider filtering down to only "important"/ frequent conversations
+1.  Linguistic Features - Frequency of Alcohol-Related Terms: Count the occurrences of words or phrases related to alcohol use. - Sentiment Analysis: Determine the overall sentiment (positive, negative, neutral) of messages. Emotional tone can be indicative of substance use disorders. - Emotion Detection: Identify specific emotions (e.g., sadness, anxiety, anger) expressed in messages.
+2.  Behavioral Patterns: - Temporal Patterns: Analyze message frequency and timing to identify irregular patterns or signs of distress. - Communication Style: Examine writing style, such as changes in verbosity, use of informal language, or erratic patterns.
+    -   Rather than changes within the individual, look at changes in aud vs non aud messages
+3.  **Social Features:** - **Interaction with Others:** Look at the frequency and nature of interactions with friends or other users, which can provide context about social behavior. - Consider filtering down to only "important"/ frequent conversations
 4.  **Contextual Features:**
     -   **Contextual Keywords:** Identify discussions around stressful events, mental health issues, or other factors related to alcohol use.
     -   **Topic Modeling:** Use techniques like Latent Dirichlet Allocation (LDA) to identify prevalent topics in the messages.
@@ -38,19 +31,19 @@ Some features will be more useful at the level of the message, meaning a feature
 
 Ideas for message-level features include:
 
-1.   **Linguistic Features:**
-    -   **Alcohol-Related Terms:** The frequency and context of specific alcohol-related terms in individual messages can reveal immediate concerns or references.
+1.  **Linguistic Features:** - **Alcohol-Related Terms:** The frequency and context of specific alcohol-related terms in individual messages can reveal immediate concerns or references.
 
-    -   **Sentiment and Emotion Analysis:** The sentiment or emotional tone of a single message might indicate acute states of distress or alcohol use. Changes in sentiment across messages could be significant.
+```         
+-   **Sentiment and Emotion Analysis:** The sentiment or emotional tone of a single message might indicate acute states of distress or alcohol use. Changes in sentiment across messages could be significant.
 
-    -    Total number of alcohol/emotional messages within a user may be much more important than total number of alcohol/emotional words, etc
-2.   **Behavioral Patterns:**
-    -   **Temporal Patterns:** Identification of messaging frequency and timing (e.g. proportion of late night/weekend messages, etc
-3.   **Contextual Features:**
-    -   **Filtering by Keywords:** Identification of a subset of messages to extract features from (e.g. filter down to just messages containing alcohol words, just negative sentiment messages)can provide more temporally relevant insights into situational factors influencing alcohol use.
+-    Total number of alcohol/emotional messages within a user may be much more important than total number of alcohol/emotional words, etc
+```
+
+2.  **Behavioral Patterns:** - **Temporal Patterns:** Identification of messaging frequency and timing (e.g. proportion of late night/weekend messages, etc
+3.  **Contextual Features:** - **Filtering by Keywords:** Identification of a subset of messages to extract features from (e.g. filter down to just messages containing alcohol words, just negative sentiment messages)can provide more temporally relevant insights into situational factors influencing alcohol use.
 4.  **Social Interactions:**
     -   **Interaction Content:** The nature of replies or interactions within specific messages can provide insights into social dynamics and support structures.
-5.   Can choose to filter messages for feature extraction to just those with most frequent interaction, strongest sentiment, just convos where alcohol is mentioned, etc
+5.  Can choose to filter messages for feature extraction to just those with most frequent interaction, strongest sentiment, just convos where alcohol is mentioned, etc
 
 **Document level**
 

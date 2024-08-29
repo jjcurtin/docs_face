@@ -1,10 +1,10 @@
 ---
-title: "sentiment.qmd"
+title: "Sentiment analysis"
 format: html
 editor: visual
 ---
 
-# Basic sentiment analysis
+## Basic sentiment analysis
 
 Notes about different basic sentiment analysis techniques explored and future directions
 
@@ -38,7 +38,7 @@ Sentimentr package assigns polarity at the level of the sentence, taking into ac
 
 *Zac Anger Profanity words* -3076 profane words -no sentiment but could be used in combo with face bad words? They look good
 
-# Advanced Sentiment analysis
+## Advanced Sentiment analysis
 
 Traditional approaches may not do well do to short form and informal language in msgs. Can consider –
 

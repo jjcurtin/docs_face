@@ -1,85 +1,108 @@
-# Raw data notes
+---
+title: "Data structure"
+format: html
+editor: visual
+---
+
 These notes define raw data sources, outline naming conventions and purposes of raw data files, and provide notes about participants with missing/unusual raw data files. See script chk_file_types.Rmd for code used to identify unusual files at this level
 
-## Study folders and files
-Raw (i.e. unprocessed, has not been reduced or altered in any way) data for each participant lives in THREE locations: 
-  
-  * 1) raw social media data in P:>studydata>face>data>encrypted>raw
-  * 2) Individual subject raw data in P:>studydata>face>data_raw, stored in separate folders labeled with SubID numbers
-  * 3) Aggregate subject data (collected in qualtrics) in the root of P:>studydata>face>data_raw
+### Study folders and files 
 
-### Raw social media data 
-All downloads of Facebook, plus Instagram or Twitter if they have them lives in P:\studydata\face\data\encrypted\raw
-* This data is stored SEPARATELY from all other study data to protect data privacy
-* This data is labeled as the subjects Social Media ID number (SMID), which is a randomly generated 6 digit number.
+Raw (i.e. unprocessed, has not been reduced or altered in any way) data for each participant lives in THREE locations:
 
-**Missing/unexpected files**
+1.  Raw social media data in P:\>studydata\>face\>data\>encrypted\>raw
+2.  Individual subject raw data in P:\>studydata\>face\>data_raw, stored in separate folders labeled with SubID numbers
+3.  Aggregate subject data (collected in qualtrics) in the root of P:\>studydata\>face\>data_raw
+
+## Raw social media data
+
+All downloads of Facebook, plus Instagram or Twitter if they have them lives in P:\studydata\face\data\encrypted\raw \* This data is stored SEPARATELY from all other study data to protect data privacy \* This data is labeled as the subjects Social Media ID number (SMID), which is a randomly generated 6 digit number.
+
+Missing/unexpected files —
+
 Social Media folder completely empty
-  * SMID 706424
-*
+
+-   SMID 706424
+
 No Facebook? Other SM data present
-  * SMID 808900
-  * SMID 169655
 
+-    SMID 808900
 
-### Individual subject raw data
-SCID recordings, graduate clinician scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:\studydata\face\data_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047). 
+-    SMID 169655
 
-**Missing/unexpected files**: SJS permanently deleted folder for subid 471 1/2024 due to folder being empty. Confirmed via checking session notes that subject discontinued and did not complete the session, folder should have been deleted day of session
+## Individual subject raw data
 
+SCID recordings, graduate clinician scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:\studydata\face\data\_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047).
 
-Every subject folder should include:
+Missing/unexpected files: SJS permanently deleted folder for subid 471 1/2024 due to folder being empty. Confirmed via checking session notes that subject discontinued and did not complete the session, folder should have been deleted day of session
 
-#### _SCID.wav
-Audio recording of the SCID administered during the study visit (used for label validation)
-**Data cleaning notes:**  
-* 3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels
-  * 092 has note in data_raw stating recording was forgotten.   _SS file is currently a copy of the RA review -- should it be missing?
-  * 412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)
-  
-* 355 recording exists but was saved as .3gp instead of .wav file. No issues listening to recording
- 
-#### _TLFB.csv
+#### Every subject folder should include:
+
+1.  **\_SCID.wav**
+
+An audio recording of the SCID administered during the study visit (used for label validation)
+
+*Data cleaning notes:*
+
+-   3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels
+
+    -    092 has note in data_raw stating recording was forgotten. \_SS file is currently a copy of the RA review -- should it be missing?
+
+    -   412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)
+
+```{=html}
+<!-- -->
+```
+-   355 recording exists but was saved as .3gp instead of .wav file. No issues listening to recording
+
+2.  **\_TLFB.csv**
+
 File listing all past month binge drinking days reported during the timeline follow-back completed in session. Paper copies of the timeline followback exist in the locked study file cabinet.
-**Data cleaning notes:**
- * 811 missing tlfb, but has drank in the past month so should have one. No notes in session form. 
-    * 3/2024 Physical TLFB file exists for this subject. SS created a TLFB .csv file for this subject using the raw data file.
 
+*Data cleaning notes:*
 
-####_SCID_SS.csv
+-   811 missing tlfb, but has drank in the past month so should have one. No notes in session form.
+
+3/2024 Physical TLFB file exists for this subject. SS created a TLFB .csv file for this subject using the raw data file.
+
+3.  **\_SCID_SS.csv**
+
 File of the graduate clinician (Sarah Sant'Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).
 
-**Data cleaning notes:**
-* Three subjects (092, 412, 509) were missing SCID audio recordings and could not be independently scored by Sarah. _SCID_SS scoring files for these three participants are copies of the qualtrics responses for these sessions. Questions: Should I delete SS files for these and just fill them in from qualtrics in cleaning? How to handle these in reliability analysis?
-* First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to avoid later confusion (it is 6 times in last 12 months) 3/2024
-*3/5: Sarah resaved all _SS files as .csv files (older files were .xlsx)
+*Data cleaning notes:*
 
+-   Three subjects (092, 412, 509) were missing SCID audio recordings and could not be independently scored by Sarah. \_SCID_SS scoring files for these three participants are copies of the qualtrics responses for these sessions. Questions: Should I delete SS files for these and just fill them in from qualtrics in cleaning? How to handle these in reliability analysis?
 
+-    First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to avoid later confusion (it is 6 times in last 12 months) 3/2024
 
+-   3/5: Sarah resaved all \_SS files as .csv files (older files were .xlsx)
 
-**Other files that MAY exist in raw data subject folders include:**
+Other files that MAY exist in raw data subject folders include:
 
-####_SCIDReview.csv
-These files were early reviews of SCIDs done by SS or lead undergraduate RAs to identify early SCID scoring issues to be discussed in session. These files do NOT replace any existing SCID scoring. If changes were made to scoring based on review, subjects will have a new_scid file in their folder
-* All happened early in data collection - scid recordings in May - June 2018. Flagged by questionable scoring brought up during weekly meetings. 
-* All reviews completed june - august 2018
-* All files have accompanying _SS files with later score dates
-* SS is considering moving these all to a separate administrative folder?
+**\_SCIDReview.csv** These files were early reviews of SCIDs done by SS or lead undergraduate RAs to identify early SCID scoring issues to be discussed in session. These files do NOT replace any existing SCID scoring. If changes were made to scoring based on review, subjects will have a new_scid file in their folder
 
-####_NewSCID.csv
-These are updates to scid scoring procedures that were made after a number of questions from initial data collection. The changes were implemented 7/12/2018. For full details on scoring, see methods > Measures > SCID_Scoring decisions. Briefly, we clarified cutoffs for the frequency of serious (2 or more past year) vs less serious (monthly) consequences for items 6, 7, and 9.
-* New SCID files are RA corrections to their qualtrics reported SCID scores. THESE FILES REPLACE THE EXISTING RA SCID VALUES.
-* Most were in response to earlier SCID review, final 4 were identified in weekly meeting and identified for rescoring.
+-   All happened early in data collection - scid recordings in May - June 2018. Flagged by questionable scoring brought up during weekly meetings.
+
+-   All reviews completed june - august 2018
+
+-   All files have accompanying \_SS files with later score dates
+
+-   SS is considering moving these all to a separate administrative folder?
+
+**\_NewSCID.csv** These are updates to scid scoring procedures that were made after a number of questions from initial data collection. The changes were implemented 7/12/2018. For full details on scoring, see methods \> Measures \> SCID_Scoring decisions. Briefly, we clarified cutoffs for the frequency of serious (2 or more past year) vs less serious (monthly) consequences for items 6, 7, and 9.
+
+-   New SCID files are RA corrections to their qualtrics reported SCID scores. THESE FILES REPLACE THE EXISTING RA SCID VALUES.
+
+-   Most were in response to earlier SCID review, final 4 were identified in weekly meeting and identified for rescoring.
 
 ### Aggregate session data collected in qualtrics
-Qualtrics data is downloaded from qualtrics and stored as csv files in the root of P:\studydata\face\data_raw. Qualtrics data includes:
+
+Qualtrics data is downloaded from qualtrics and stored as csv files in the root of P:\studydata\face\data\_raw. Qualtrics data includes:
 
 #### qualtrics_id_battery.csv
-Participants completion of study questionnaires (demographics survey, AUDIT, YAACQ, alcohol insight questions) 
+
+Participants completion of study questionnaires (demographics survey, AUDIT, YAACQ, alcohol insight questions)
 
 #### qualtrics_scid.csv
+
 RA scoring of SCIDs in session
-
-
-
-
