@@ -48,5 +48,258 @@
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
+  },
+  {
+    "objectID": "sentiment.html",
+    "href": "sentiment.html",
+    "title": "8  sentiment.qmd",
+    "section": "",
+    "text": "9 Basic sentiment analysis\nNotes about different basic sentiment analysis techniques explored and future directions\n\n9.0.1 Word level sentiment analysis lexicons\nThree popular unigram lexicons for word-level sentiment analysis with tidyr –\n\nNRC: binary word categorization (“yes”/“no”) into categories of positive, negative, anger, anticipation, disgust, fear, joy, sadness, surprise, and trust. Words can have multiple entries if assigned to multiple sentiments. Small degree of word stemming. -6453 unique words\nBing: binary word classification into positive and negative categories. Small degree of word stemming. 6783 unique words\nAFINN: assigns words with a score that runs between -5 and 5, with negative scores indicating negative sentiment and positive scores indicating positive sentiment. Small degree of stemming. 2477 unique words\n\nCan consider reducing all to just positive vs negative sentiment and combining words to maximize dictionary\nNo obvious differences in effectiveness of one dictionary vs another in EDA\n\n\n9.0.2 Sentence level sentiment analysis lexicons\nSentimentr package assigns polarity at the level of the sentence, taking into account amplifiers/valence shifting words (e.g. really, not). Can customize dictionary or valence words and pass arguments indiciating how far before/after a polarized word that valence shifters should function. Multiple dictionaries available in lexicon package including:\n\nCombined Jockers_rinker -default of sentimentr - combined and augmented version of Jockers (2017) & Rinker’s augmented Hu & Liu (2004) positive/negative word list - 11,710 unique words with polarity ranges from -2 to 1 (why?)\nSenticNet Polarity - Cambria, Poria, Bajpai,& Schuller’s (2016) -23626 words with polarity ratings between -1 and 1\nSentiword Polarity -Baccianella, Esuli and Sebastiani’s (2010) positive/negative word list as sentiment lookup values -polarity value was assigned by taking the difference between the original data set’s negative and positive attribution (PosScore - NegScore). -20093 words\nslang sentiment -Wu, Morstatter, & Liu’s (2016) positive/negative slang word list as sentiment lookup values -48277 slang phrases, rated by sentiment ranging -1 to 1\nEmoji sentiment Does not include all emojis, but I added to my emoji spreadsheet -Novak, Smailovic, Sluban, & Mozetic’s (2015) emoji sentiment data. - used Twitter data and 83 coders to rate each of the the emoji uses as negative, neutral, or positiveOther potentially useful dictionaries from lexicon package\n\nLemmetization list Mechura’s (2016) English lemmatization list, reduces to root lemetization 41531 unique words associated with 25950 unique stems\nZac Anger Profanity words -3076 profane words -no sentiment but could be used in combo with face bad words? They look good\n\n\n\n10 Advanced Sentiment analysis\nTraditional approaches may not do well do to short form and informal language in msgs. Can consider –\n\nPre-Trained Models:\n\nVADER (Valence Aware Dictionary and sEntiment Reasoner): VADER pretrained specifically on social media data, compatibility with shorter text and emojis.\nBERT (Bidirectional Encoder Representations from Transformers) can be fine-tuned for sentiment analysis on informal text. Look into Hugging Face’s transformers library in Python for pretrained models",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>sentiment.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "data_structure.html",
+    "href": "data_structure.html",
+    "title": "2  Raw data notes",
+    "section": "",
+    "text": "3 Study folders and files\nRaw (i.e. unprocessed, has not been reduced or altered in any way) data for each participant lives in THREE locations:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Raw data notes</span>"
+    ]
+  },
+  {
+    "objectID": "data_structure.html#raw-social-media-data",
+    "href": "data_structure.html#raw-social-media-data",
+    "title": "2  Raw data notes",
+    "section": "3.1 Raw social media data",
+    "text": "3.1 Raw social media data\nAll downloads of Facebook, plus Instagram or Twitter if they have them lives in P: * This data is stored SEPARATELY from all other study data to protect data privacy * This data is labeled as the subjects Social Media ID number (SMID), which is a randomly generated 6 digit number.\nMissing/unexpected files Social Media folder completely empty * SMID 706424  No Facebook? Other SM data present  SMID 808900 * SMID 169655",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Raw data notes</span>"
+    ]
+  },
+  {
+    "objectID": "data_structure.html#individual-subject-raw-data",
+    "href": "data_structure.html#individual-subject-raw-data",
+    "title": "2  Raw data notes",
+    "section": "3.2 Individual subject raw data",
+    "text": "3.2 Individual subject raw data\nSCID recordings, graduate clinician scoring of SCIDs and other SCID alterations, and TLFB binge dates are stored in P:_raw. Data is stored in individual subject folders stored by their SubID (3 or 4 digit number ranging from 001 - 1047).\nMissing/unexpected files: SJS permanently deleted folder for subid 471 1/2024 due to folder being empty. Confirmed via checking session notes that subject discontinued and did not complete the session, folder should have been deleted day of session\nEvery subject folder should include:\n\n3.2.1 _SCID.wav\nAudio recording of the SCID administered during the study visit (used for label validation) Data cleaning notes:\n* 3 subjects are missing the audio recording of their SCID and cannot be scored by Sarah. (only qualtrics versions exist). Qualtrics scores of these subjects will be used for final outcome labels * 092 has note in data_raw stating recording was forgotten. _SS file is currently a copy of the RA review – should it be missing? * 412 and 509 do not have notes in file. Both are potentially short recordings (no symptoms)\n\n355 recording exists but was saved as .3gp instead of .wav file. No issues listening to recording\n\n\n3.2.1.1 _TLFB.csv\nFile listing all past month binge drinking days reported during the timeline follow-back completed in session. Paper copies of the timeline followback exist in the locked study file cabinet. Data cleaning notes: * 811 missing tlfb, but has drank in the past month so should have one. No notes in session form. * 3/2024 Physical TLFB file exists for this subject. SS created a TLFB .csv file for this subject using the raw data file.\n####_SCID_SS.csv File of the graduate clinician (Sarah Sant’Ana) SCID scoring based off of the SCID audio recording. The graduate clinician scores are used for establishing all diagnoses related labels for the project (RA scores are ONLY used for interrater reliability reports).\nData cleaning notes: * Three subjects (092, 412, 509) were missing SCID audio recordings and could not be independently scored by Sarah. _SCID_SS scoring files for these three participants are copies of the qualtrics responses for these sessions. Questions: Should I delete SS files for these and just fill them in from qualtrics in cleaning? How to handle these in reliability analysis? * First 20 Scid_SS files incorrectly stated question 1 as alcohol in the past 6 months, this was manually updated to 12 to avoid later confusion (it is 6 times in last 12 months) 3/2024 *3/5: Sarah resaved all _SS files as .csv files (older files were .xlsx)\nOther files that MAY exist in raw data subject folders include:\n####_SCIDReview.csv These files were early reviews of SCIDs done by SS or lead undergraduate RAs to identify early SCID scoring issues to be discussed in session. These files do NOT replace any existing SCID scoring. If changes were made to scoring based on review, subjects will have a new_scid file in their folder * All happened early in data collection - scid recordings in May - June 2018. Flagged by questionable scoring brought up during weekly meetings. * All reviews completed june - august 2018 * All files have accompanying _SS files with later score dates * SS is considering moving these all to a separate administrative folder?\n####_NewSCID.csv These are updates to scid scoring procedures that were made after a number of questions from initial data collection. The changes were implemented 7/12/2018. For full details on scoring, see methods &gt; Measures &gt; SCID_Scoring decisions. Briefly, we clarified cutoffs for the frequency of serious (2 or more past year) vs less serious (monthly) consequences for items 6, 7, and 9. * New SCID files are RA corrections to their qualtrics reported SCID scores. THESE FILES REPLACE THE EXISTING RA SCID VALUES. * Most were in response to earlier SCID review, final 4 were identified in weekly meeting and identified for rescoring.\n\n\n\n3.2.2 Aggregate session data collected in qualtrics\nQualtrics data is downloaded from qualtrics and stored as csv files in the root of P:_raw. Qualtrics data includes:\n\n3.2.2.1 qualtrics_id_battery.csv\nParticipants completion of study questionnaires (demographics survey, AUDIT, YAACQ, alcohol insight questions)\n\n\n3.2.2.2 qualtrics_scid.csv\nRA scoring of SCIDs in session",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Raw data notes</span>"
+    ]
+  },
+  {
+    "objectID": "outcome_labels.html",
+    "href": "outcome_labels.html",
+    "title": "3  SCID Cleaning",
+    "section": "",
+    "text": "3.1 Inputs",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>SCID Cleaning</span>"
+    ]
+  },
+  {
+    "objectID": "outcome_labels.html#inputs",
+    "href": "outcome_labels.html#inputs",
+    "title": "3  SCID Cleaning",
+    "section": "",
+    "text": "_SS_SCID.csv files: One per subject. These are the graduate clinician’s scoring of SCID audio recordings from sessions. These scores serve as the final outcome labels for SCID diagnoses\nqualtrics_scid.csv: One aggregate file. Compiled responses of RA scid scores collected during session\n_NewSCID.xlsx files: Rescores of earlier scids by RAs due to updates made to scoring criteria during data collection. These files replace original qualtrics scores",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>SCID Cleaning</span>"
+    ]
+  },
+  {
+    "objectID": "outcome_labels.html#outputs",
+    "href": "outcome_labels.html#outputs",
+    "title": "3  SCID Cleaning",
+    "section": "3.2 Outputs",
+    "text": "3.2 Outputs\n\n3.2.1 scid_labels.csv\nGenerated based on cleaning and combining all _SS_SCID files.\nData Dictionary:\nsubid: Subject ID number ranging from 001 - 1047. ID number used to identify all subject data EXCEPT social media data\nse0: SCID-V-Research Version Module E screening question (E1): Have you drank alcohol at least 6 times in the past 12 months? Answers: yes or no\nse1: SCID-V-Research Version Module E question 1 (E2): Alcohol is often taken in larger amounts OR over a longer period than was intended. Answers: yes or no\nse2: SCID-V-Research Version Module E question 2 (E3): There is a persistent desire OR unsuccessful efforts to cut down or control alcohol use. Answers: yes or no\nse3: SCID-V-Research Version Module E question 3 (E4): A great deal of time is spent in activitiesnecessary to obtain alcohol, use alcohol, or recover from its effects. Answers: yes or no\nse4: SCID-V-Research Version Module E question 4 (E5): Craving, or a strong desire or urge to use alcohol. Answers: yes or no\nse5: SCID-V-Research Version Module E question 5 (E6): Recurrent alcohol use resulting in a failure to fulfill major role obligations at work, school, or home [(e.g., repeated absences or poor work performance related to alcohol use; alcohol-related absences, suspensions, or expulsions from school; neglect of children or household)]. Answers: yes or no\nse6: SCID-V-Research Version Module E question 6 (E7): Continued alcohol use despite having persistent or recurrent social or interpersonal problems caused or exacerbated by the effects of alcohol [(e.g., arguments with spouse about consequences of intoxication, physical fights)]. Answeres: yes or no\nse7: SCID-V-Research Version Module E question 7 (E8): Important social, occupational, or recreational activities given up or reduced because of alcohol use. Answers: yes or no\nse8: SCID-V-Research Version Module E question 8 (E9): Recurrent alcohol use in situations in which it is physically hazardous [(e.g., driving an automobile or operating a machine when impaired by alcohol use)]. Answers: yes or no\nse9: SCID-V-Research Version Module E question 9 (E10): Alcohol use is continued despite knowledge of having a persistent or recurrent physical or psychological problem that is likely to have been caused or exacerbated by alcohol [(e.g., continued drinking despite recognition that an ulcer was made worse by alcohol consumption)]. Answers: yes or no\nse10: SCID-V-Research Version Module E question 10 (E11): Tolerance, as defined by either of the following: a. A need for markedly increased amounts of alcohol to achieve intoxication or desired effect. b. Markedly diminished effect with continued use of the same amount of alcohol. Answers: yes or no\nse11: SCID-V-Research Version Module E question 11 (E12): Withdrawal, as manifested by either of the following: a. At least TWO of the following developing within several hours to a few days after the cessation of (or reduction in) alcohol use: autonomic hyperactivity (e.g., sweating or pulse rate greater than 100 bpm), increased hand tremor, insomnia, nausea or vomiting, psychomotor agitation, anxiety, generalized tonic-clonic seizures, transient visual, tactile, or auditory hallucinations or illusions b. Alcohol (or a closely related substance such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms. Answers: yes or no\ntotal: The total count of “yes” responses for a participant on items se1 - se11. Possible range: 0 - 11. Total calculated in mak_scid.Rmd\naud: A binary positive/negative variable indicating if a participant is positive or negative for Alcohol Use Disorder. Presence of 2 or more symptoms (total variable &gt;= 2) results in a positive label\nseverity: A four level factor denoting the severity of alcohol use disorder. Levlels are: Negative (Participant does not meet criteria for AUD, total score &lt;=1), Mild (total score = 2 or 3), Moderate (total score = 4 or 5), and Severe (total score &gt;= 6).\n\n\n3.2.2 Interrater reliability\nGenerated based on comparing _SS_SCID scores with RA scores from qualtrics (or _NewSCID) files\nData Dictionary:\nSame as above, but also including ra scores (ra variables are preceded by “ra_” e.g. ra_se0, ra_se1…)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>SCID Cleaning</span>"
+    ]
+  },
+  {
+    "objectID": "outcome_labels.html#ss_scid-files---final-labels",
+    "href": "outcome_labels.html#ss_scid-files---final-labels",
+    "title": "3  SCID Cleaning",
+    "section": "4.1 _SS_SCID files -> final labels",
+    "text": "4.1 _SS_SCID files -&gt; final labels\n\nThree subjects (092, 412, 509) were missing SCID audio recordings and could not be independently scored by Sarah. _SCID_SS scoring files for these three participants are copies of the qualtrics responses for these sessions. Questions: Should I delete SS files for these and just fill them in from qualtrics in cleaning? How to handle these in reliability analysis?\nSarah did not always enter Total Scores in spreadsheet. This variable was instead calculated in mak_scid.Rmd\nAll SS files were confirmed to use correct scoring (1, 3) recoded to yes/no for each symptom in cleaning",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>SCID Cleaning</span>"
+    ]
+  },
+  {
+    "objectID": "outcome_labels.html#qualtrics-and-new_scid-files",
+    "href": "outcome_labels.html#qualtrics-and-new_scid-files",
+    "title": "3  SCID Cleaning",
+    "section": "4.2 Qualtrics and new_scid files",
+    "text": "4.2 Qualtrics and new_scid files\n\n4.2.1 Data type errors\n\nSubid 754. RA reported they incorrectly entered survey as fake/training data during real session. Updated to “Real”\n\n\n\n4.2.2 SubID errors\nSubIDS entered as SMIDS (corrected to subid by looking up match in id_xlsx) * 285953 corrected to 292 * 668698 corrected to 375 * 165500 corrected to 410 * 913773 corrected to 482 * 285953 corrected to 292 * 668698 corrected to 375 * 165500 corrected to 410 * 913773 corrected to 482\nDuplicate subids. Corrections to find true subid for sessions was done by matching session time, calendar session, RA notes, and ID tracker. All corrections done by SS\n\n870 (not real subid) corrected to 863\n029 with start_date==“2018-06-08 19:52:58” corrected to 026\n325 with start_date==“2018-08-31 17:28:55” corrected to 320\n723 with start_date==“2019-03-15 17:24:12”corrected to 727\n\n\n\n4.2.3 Invalid responses\n6 qualtrics surveys had answers that were not 1 or 3. For all 7 cases with invalid responses, SS reviewed SCID scoring protocol document and scored these items as 1 or 3\n```",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>SCID Cleaning</span>"
+    ]
+  },
+  {
+    "objectID": "study_sample.html",
+    "href": "study_sample.html",
+    "title": "4  These are notes related to extracting and cleaning Facebook data",
+    "section": "",
+    "text": "4.1 Unzipping problems\nSome files were unable to be unzipped due to corrupt file format\nSMIDS with known problems unzipping data: 706424, 398020, 701927, 145406, 114589, 434728, 808900, 169655, 138929, 398220",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>These are notes related to extracting and cleaning Facebook data</span>"
+    ]
+  },
+  {
+    "objectID": "study_sample.html#smids-with-missinglow-amount-of-fb-data",
+    "href": "study_sample.html#smids-with-missinglow-amount-of-fb-data",
+    "title": "4  These are notes related to extracting and cleaning Facebook data",
+    "section": "4.2 SMIDs with missing/low amount of FB data",
+    "text": "4.2 SMIDs with missing/low amount of FB data\n706424 – missing Social media? FB is for sure gone (never came into download resched) but session form indicates insta download 398220 only photos and videos 10/26/2018 701927 only photos and vids 10.26.18 145406 only photos and videos 10/31/2018 114589 only photo and vids 10/30/18 434728 only photos and vids 10.31.2018 913773 19 items…probably ok? keep an eye on for processing. 11.2.2018 141890 19 items 11.14.2018 keep 988738 - 18 items 2.1.2019 keep 582911 17 items 2.1.2019 – this likely looks like someone who doesn’t use FB that much and potentially deleted their messages before coming in. Keep? 808900 - No Facebook 11.8.2018 169655 No FB 11.16.2018 138929 just messages 1.24.2019",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>These are notes related to extracting and cleaning Facebook data</span>"
+    ]
+  },
+  {
+    "objectID": "message_cleaning.html",
+    "href": "message_cleaning.html",
+    "title": "5  message_cleaning.qmd",
+    "section": "",
+    "text": "6 Message Cleaning\nHere are text cleaning considerations – ongoing with eda and feature engineering\n\nDimensionality reduction:\nMessages are filtered down to past year only, since AUD diagnoses are based on behavior in last 12 months. Can also consider filtering down to only user generated text, only text from conversations with at least N observations\nAuto-generated messages:\nSarah implemented code to remove FB generated messages (e.g. “you are now connected on messenger”, “[NAME] changed the name of the group.” Might consider additional techniques for idetnification of promo messages/games/pasting of text from website or assignment\nStop Words:\n\nGeneral Stop Words: Removing common stop words like “the,” “and,” “is,” might be appropriate, while removing stop words like “not” or “my” can change the meaning of a message. Many lists in R\nCustom Stop Words List: Create a custom stop words list that excludes words crucial for understanding context or sentiment. List potential stop words to retain here: not, isn’t, basically all negation, all personal pronouns,\n\nMisspellings:\n\n-   **Spell Checking:** General spell correction libraries or tools to address frequent misspellings. While this helps in standardizing text, be cautious about over-correcting as it might alter the intended meaning. Consider using context-aware spell checkers that understand the common patterns in informal language (python only? no good examples for me yet)\n\n-   **Repeated letters:** Can normalize repeated letters to their base form to reduce the variability (e.g., \"haha\" and \"hahahaha\" both become \"haha\"). This helps in treating expressions with varying intensities uniformly, but may not be the case. Instead of removing repeated letters, could create a system that weights expressions based on their frequency or intensity (e.g., \"haha\" = vs. \"hahahahahaha\"). But likely not worth it?\n\nCapitalization and Punctuation:\n\n-   **Normalization:** Convert all text to lowercase to ensure uniformity. Can consider weighting capitalization as an emphasis (e.g. +1 in direction of sentiment)\n\n-   **Punctuation:** Can strip most punctuation – consider retaining punctuation with meaningful emphasis. e.g. amplifiers: !, \\^, \\&gt;\\&gt;\\&gt;, all non emoji emoticons :) :( :/ etc\n\nEmojis\n\nEmojis are retained as their International Emoji library definitions with “_” for easy identification. Sarah has developed an emoji library to gather descriptions and basic sentiment analysis of all recognized emoji. Have expanded library with sentimentr emoji dictionary. Can also look into Python emoji packag for cross reference\nSentimentr and VADER (python sentiment package) provide polarity scores for emojis, but limited in emojis scored and limited to just providing sentiment of the emoji description\nPretrained sentiment model w emoji: investigate DeepMoji python package\nMore ideas in tune emoji\n\nSlang\n\nSome slang dictionaries do exist, but we will likely end up fine tuning a pretrained slang identifier. Need to do EDA to ensure slang words containing symbols should be retained – (e.g. n00b, b!tch). Potentially context aware spell checker will help here\nLook into Python Urban Dictionary API: Provides definitions for modern slang terms. While there isn’t an official API, you can scrape data or use unofficial APIs to get slang definitions.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>message_cleaning.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "feat_overview.html",
+    "href": "feat_overview.html",
+    "title": "6  feat_overview.qmd",
+    "section": "",
+    "text": "6.1 Types of features",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>feat_overview.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "feat_overview.html#types-of-features",
+    "href": "feat_overview.html#types-of-features",
+    "title": "6  feat_overview.qmd",
+    "section": "",
+    "text": "Linguistic Features - Frequency of Alcohol-Related Terms: Count the occurrences of words or phrases related to alcohol use. - Sentiment Analysis: Determine the overall sentiment (positive, negative, neutral) of messages. Emotional tone can be indicative of substance use disorders. - Emotion Detection: Identify specific emotions (e.g., sadness, anxiety, anger) expressed in messages.\nBehavioral Patterns: - Temporal Patterns: Analyze message frequency and timing to identify irregular patterns or signs of distress. - Communication Style: Examine writing style, such as changes in verbosity, use of informal language, or erratic patterns.\n\nRather than changes within the individual, look at changes in aud vs non aud messages\n\nSocial Features: - Interaction with Others: Look at the frequency and nature of interactions with friends or other users, which can provide context about social behavior. - Consider filtering down to only “important”/ frequent conversations\nContextual Features:\n\nContextual Keywords: Identify discussions around stressful events, mental health issues, or other factors related to alcohol use.\nTopic Modeling: Use techniques like Latent Dirichlet Allocation (LDA) to identify prevalent topics in the messages.\n\nPsycholinguistic Features\n\nLanguage Complexity: Measure the complexity of language used, such as sentence length and word diversity.\nCognitive Distortions: Look for patterns associated with cognitive distortions, such as all-or-nothing thinking or catastrophizing.",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>feat_overview.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "feat_overview.html#message-versus-document-level-features",
+    "href": "feat_overview.html#message-versus-document-level-features",
+    "title": "6  feat_overview.qmd",
+    "section": "6.2 Message versus document level features",
+    "text": "6.2 Message versus document level features\nDepending on the type of feature, we may have differing pre-processing steps for the data. This may include aggregation of messages across groups, filtering of messages within an individual, or differences in the type of text cleaning/preprocessing that make sense for different approaches.Here I keep track of ideas about levels:\nMessage level\nSome features will be more useful at the level of the message, meaning a feature score is calculated for each individual message within a user (or defined subset of messages). These scores then may be aggregated within an individual or used on their own for message filtering.\n\nAdvantages: Provides a detailed view by capturing the sentiment and topics of each message. Allows for normalization and analysis of sentiment or topics relative to the number of messages, giving a more granular understanding. Easier for EDA to gain insights at level of message due to increased interpretability.\nDisadvantages: Requires more complex aggregation and normalization to ensure that message volume differences do not skew results. Potentially more complex than needed for identification of broader trends.\n\nIdeas for message-level features include:\n\nLinguistic Features: - Alcohol-Related Terms: The frequency and context of specific alcohol-related terms in individual messages can reveal immediate concerns or references.\n\n-   **Sentiment and Emotion Analysis:** The sentiment or emotional tone of a single message might indicate acute states of distress or alcohol use. Changes in sentiment across messages could be significant.\n\n-    Total number of alcohol/emotional messages within a user may be much more important than total number of alcohol/emotional words, etc\n\nBehavioral Patterns: - Temporal Patterns: Identification of messaging frequency and timing (e.g. proportion of late night/weekend messages, etc\nContextual Features: - Filtering by Keywords: Identification of a subset of messages to extract features from (e.g. filter down to just messages containing alcohol words, just negative sentiment messages)can provide more temporally relevant insights into situational factors influencing alcohol use.\nSocial Interactions:\n\nInteraction Content: The nature of replies or interactions within specific messages can provide insights into social dynamics and support structures.\n\nCan choose to filter messages for feature extraction to just those with most frequent interaction, strongest sentiment, just convos where alcohol is mentioned, etc\n\nDocument level\nThe document refers to all of a user’s past year messages concatenated into a single observation per participant.\n\nAdvantages: Simplifies the analysis by summarizing a user’s entire message history into a single set of features. Useful for obtaining a high-level view of a user’s overall sentiment or topic distribution.\nDisadvantages: May lose nuances present in individual messages and overlook variations in sentiment or topics across different messages. Loss of n-grams, negation, timing, etc.\n\nIdeas for doc level features:\n\nLinguistic Features:\n\nOverall Frequency of Alcohol-Related Terms: An aggregate count of alcohol-related terms across all messages can provide a broad view of how frequently alcohol is discussed within a person\nOverall Sentiment Trends: Analyzing overall sentiment trends in the document can indicate more stable patterns in emotional states related to alcohol use.\n\nBehavioral Patterns:\n\nLong-Term Temporal Patterns: Patterns in message frequency over time can highlight chronic or long-term changes in behavior, such as increasing isolation or erratic communication.\n\nContextual Features:\n\nTopic Modeling: Identifying prevalent topics in the aggregated document can provide insights into recurring themes or issues in aud vs non aud individs. Can then be used to guide future cleaning/extraction\nCognitive Patterns: Document-level analysis can reveal more stable cognitive distortions or language use patterns that are indicative of alcohol use disorder.\n\nSocial Interactions:\n\nInteraction Patterns: Analyzing how interactions are in general for a user over time can reveal differences in social support or isolation, which may be related to alcohol use",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>feat_overview.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "dictionaries.html",
+    "href": "dictionaries.html",
+    "title": "7  dictionaries.qmd",
+    "section": "",
+    "text": "7.1 Dictionary based methods\nOur top dictionary based method is LIWC 2022. Manual here https://www.liwc.app/help/psychometrics-manuals. Note this is much better than our previous LIWC – Corpus now has 31 million words extrated from relevant text sources like Facebook personality quiz results, reddit comments, tweets\nLIWC returns the percentage of words in a document that match the following LIWC categories:",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>dictionaries.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "dictionaries.html#dictionary-based-methods",
+    "href": "dictionaries.html#dictionary-based-methods",
+    "title": "7  dictionaries.qmd",
+    "section": "",
+    "text": "7.1.1 Alcohol related words\nFirst LIWC category explored is identification of messages using words from the substances category. Process outlined below can also be applied to other relevant LIWC categories inferred from EDA (profane language, negative emotional intensity, externalizing language)\n\nDocument level normalization\nConcatenating all text into a single document per user allows calculation of overall substance abuse language used across the past year for each user.\n\nNormalization: LIWC provides the count of words in the document that match their substances library / total number of words in the document.\nConsiderations: This will be impacted by whether stop words are removed before or after this step. LIWC performs automatic symbol removal and capitalization normalization, with options for stemming and stop words within liwc..but probably better to do outside for more control\n\nMessage level normalization\n3 approaches\n\nGet substance scores for all messages\n\nNormalization: [Count of substance words * sqrt(total words in message)] / total words in message. Prevents one word messages from having advantage\nAggregation: : Sum all normalized alcohol scores for each user and then divide by the total number of messages (including those with substance scores of 0).\nAdvantages: \\metric that reflects the overall presence of alcohol-related content relative to the user’s total message volume, giving context to the substance-related density among all messages.\nDisadvantages: It may be influenced by zero-inflation since messages without substance-related content contribute to the denominator, potentially diluting the score. Can consider using a log transformation or adding a small constant to avoid zero-inflation issues?\n\n Filter to only messages with substance score &gt; 0\n\nNormalization: same as above, just only on substance word containg messages\nAggregation: : Sum all normalized substance scores for each user and then divide by the total number of substance word messages only. Or could multiply by total sub msgs since can’t divide by zero if someone has no sub msgs.\nAdvantages: focuses exclusively on the messages that are relevant to AUD-related content\nDisadvantages: If a user has no substance word messages, can lead to missing values or biases due to lack of data.\n\nHybrid approach??\n\nCould potentially combine two approaches as a composite score?",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>dictionaries.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "topic_modeling.html",
+    "href": "topic_modeling.html",
+    "title": "9  topic_modeling.qmd",
+    "section": "",
+    "text": "9.1 Topic modeling\nConsider topic modeling to identify bottom up patterns in messages. Use to guide EDA for differences between AUD groups. Traditional topic modeling is not suited for short form messaging, so I will look at clustering of pretrained embeddings in my data\nBERT – Bidirectional Encoder Representations from Transformers\nQuarto workflow:",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>topic_modeling.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "topic_modeling.html#topic-modeling",
+    "href": "topic_modeling.html#topic-modeling",
+    "title": "9  topic_modeling.qmd",
+    "section": "",
+    "text": "Method - takes in a text, tokenizes it into a sequence of tokens, add in optional special tokens, and applies a Transformer encoder. The hidden states of the last layer are the contextual word embeddings.\nStrengths:\n\nContextual Understanding: BERT captures the context of words bidirectionally &gt;understands nuanced meanings in text.\nFine-Tuning: BERT can be fine-tuned on specific tasks –e.g. sentiment analysis\n\nLimitations:\n\nStatic Embeddings: Embeddings are fixed for the given input and might not capture evolving language use or fine-grained sentiment as effectively as some newer llm models.\nShort-Term Memory: BERT may struggle with longer sequences or very detailed contextual nuances in longer messages.\n\n\n\n\nGenerate BERT embeddings using sentencetransformer package in python\nUse reticulate package to load embeddings into R and perform k means clustering\nLoad embeddings into R and perform clustering (e.g., K-Means).\nAnalyze clusters to identify differences between groups and guide EDA for important filtering/identification of themes in messages",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>topic_modeling.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "llms.html",
+    "href": "llms.html",
+    "title": "10  llms.qmd",
+    "section": "",
+    "text": "10.1 Large Language Models\nMore recently developed large language models can outperform sentiment analysis and BERT topic modeling. Ones available to download pretrained embeddings (do not need api) are LLaMA and GPT2. Strengths of llms:\nWider variety of concepts: may lead to increased transparency of topic modeling",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>llms.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "llms.html#large-language-models",
+    "href": "llms.html#large-language-models",
+    "title": "10  llms.qmd",
+    "section": "",
+    "text": "Handling Long Contexts: Esp if we think our important messages are long threads. potential to understand context across multiple exchanges in convo\nCapturing Evolving Language Use: Newer models have been trained on data that contains modern slang. Additionally, more exposure to negation and nuanced sentiment at the level of the sentence.\n\n\n\n10.1.1 Process for using local vs api:\n1. Set Up Local Environment\n\nNeed the transformers and torch libraries to run LLaMA models locally. Use a GPU for efficient processing if available.\n\nDownload LLaMA Model: Best repository for my use is likely Hugging Face – easy accesibility and trained on internet content\n\n\n10.1.2 Using LLaMA transformers for message classification–\npython\nimport torch\nfrom transformers import AutoTokenizer, AutoModelForSequenceClassification\nimport pandas as pd\nimport numpy as np\n# Load the LLaMA model (assuming LLaMA model is available and downloaded)\nmodel_name = “llama/3”  # Replace with the correct model path or name\ntokenizer = AutoTokenizer.from_pretrained(model_name)\nmodel = AutoModelForSequenceClassification.from_pretrained(model_name)\n# Function to classify messages\ndef classify_messages(messages):\n    inputs = tokenizer(messages, return_tensors=“pt”, truncation=True, padding=True)\n    with torch.no_grad():\n        outputs = model(**inputs)\n    logits = outputs.logits\n    predictions = torch.softmax(logits, dim=-1).argmax(dim=-1)\n    return predictions.numpy()\n# Sample messages\nmessages = [“Drinking vodka tonight!”, “Feeling great with a beer in hand”,\n            “Partying with shots”, “No alcohol here!”, “Vodka and tequila”, “Just a regular day”]\n# Classify messages\npredictions = classify_messages(messages)\n# Create DataFrame with results\nclassification_df = pd.DataFrame({\n    ‘message’: messages,\n    ‘prediction’: predictions\n})\n# Print results\nprint(classification_df)\nR Code to Call Python Script\nlibrary(reticulate)\n# Source Python script\nsource_python(“path/to/your/python_script.py”)\n# Fetch classification results\nclassification_df &lt;- py$classification_df\n# Filter messages classified as relevant to alcohol\nrelevant_messages &lt;- classification_df %&gt;%\n  filter(prediction == 1)  # Adjust according to your model’s output format\n\n\n10.1.3 GPT workflow example:\nPerform Sentiment Analysis with GPT and LDA\n{python}\nfrom transformers import GPT2Tokenizer, GPT2Model\nimport torch\nimport pandas as pd\n# Load GPT model and tokenizer\ntokenizer = GPT2Tokenizer.from_pretrained(‘gpt2’)\nmodel = GPT2Model.from_pretrained(‘gpt2’)\ndef get_gpt_embeddings(texts):\n    inputs = tokenizer(texts, return_tensors=‘pt’, padding=True, truncation=True)\n    outputs = model(**inputs)\n    embeddings = outputs.last_hidden_state.mean(dim=1).detach().numpy()\n    return embeddings\n# Example usage\ntexts = [“I love this product!”, “This is terrible.”]\nembeddings = get_gpt_embeddings(texts)\nAdd GPT Embeddings to Data\n{r}\n# Convert embeddings to data frame and merge with original data\nembeddings_df &lt;- as_tibble(embeddings, .name_repair = “minimal”)\ndf_with_embeddings &lt;- bind_cols(df, embeddings_df)\n# Print first few rows with embeddings\nhead(df_with_embeddings)\nPerform Topic Modeling\n{r}\nlibrary(topicmodels)\n# Prepare the data for LDA\ndtm &lt;- DocumentTermMatrix(Corpus(VectorSource(df_with_embeddings$message)))\n# Fit the LDA model\nlda_model &lt;- LDA(dtm, k = 5)  # Assuming 5 topics; adjust as needed\ntopics &lt;- tidy(lda_model, matrix = “beta”)\n# Print topics\nprint(topics)\nAggregate sentiment and topics by user–\n{r}\n# Aggregate sentiment features by user\nuser_sentiment &lt;- df_with_embeddings %&gt;%\n  group_by(user_id) %&gt;%\n  summarise(across(starts_with(“embedding”), mean, .names = “mean_{col}”))\n# Aggregate topics by user\nuser_topics &lt;- df_with_embeddings %&gt;%\n  group_by(user_id) %&gt;%\n  summarise(across(starts_with(“topic”), mean, .names = “mean_{col}”))\n# Print aggregated results\nprint(user_sentiment)\nprint(user_topics)",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>llms.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "tune_liwc.html",
+    "href": "tune_liwc.html",
+    "title": "11  tune_liwc.qmd",
+    "section": "",
+    "text": "11.1 Fine tuning LIWC dictionaries\nOverview of the approach using substance category example\nQuarto Document with R and Python Code\nHere’s a sample Quarto document that combines R and Python code to accomplish this task.\nMarkdown\ntitle: “Expand LIWC Dictionary with New Alcohol-Related Terms”\nformat: html\n## Load Libraries and Data\n```{r}\n# Load required R libraries\nlibrary(dplyr)\nlibrary(stringr)\nlibrary(tidyr)\nlibrary(tidytext)\n# Sample data\ndf &lt;- data.frame(\nuser_id = c(1, 1, 2, 2, 3, 3),\nmessage = c(“Drinking vodka tonight!”, “Feeling great with a beer in hand”,\n“Partying with shots”, “No alcohol here!”,\n“Vodka and tequila”, “Just a regular day”)\n)\n# LIWC dictionary for alcohol-related terms (sample)\nliwc_alcohol_terms &lt;- c(“vodka”, “beer”, “shots”, “tequila”)\n# Function to calculate normalized alcohol score\ncalculate_normalized_score &lt;- function(message, alcohol_words) {\ncleaned_message &lt;- tolower(message) %&gt;%\nstr_remove_all(“[[:punct:]]”) %&gt;%\nstr_squish()\nwords &lt;- unlist(str_split(cleaned_message, “\\\\s+”))\nnum_words &lt;- length(words)\nalcohol_count &lt;- sum(words %in% alcohol_words)\nif (num_words &gt; 0) {\nreturn(alcohol_count * sqrt(num_words) / num_words)\n} else {\nreturn(0)\n}\n}\n# Apply function to compute scores\ndf &lt;- df %&gt;%\nmutate(normalized_alcohol_score = calculate_normalized_score(message, liwc_alcohol_terms))\nTrain BERT to Identify Similar Messages\nPython\n# Import required libraries\nfrom transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments\nimport torch\nimport pandas as pd\n# Load tokenizer and model\nmodel_name = “bert-base-uncased”\ntokenizer = BertTokenizer.from_pretrained(model_name)\nmodel = BertForSequenceClassification.from_pretrained(model_name)\n# Convert R data to pandas DataFrame\ndata = {‘message’: [“Drinking vodka tonight!”, “Feeling great with a beer in hand”,\n“Partying with shots”, “No alcohol here!”,\n“Vodka and tequila”, “Just a regular day”],\n‘normalized_alcohol_score’: [1, 0.9, 0.8, 0, 1, 0]}\ndf = pd.DataFrame(data)\n# Prepare the data for BERT\ndef tokenize_and_encode(messages):\nreturn tokenizer(messages.tolist(), padding=True, truncation=True, return_tensors=“pt”)\n# Tokenize the messages\ninputs = tokenize_and_encode(df[‘message’])\n# Define a simple dataset class\nclass MessageDataset(torch.utils.data.Dataset):\ndef __init__(self, inputs, scores):\nself.inputs = inputs\nself.scores = scores\ndef __len__(self):\nreturn len(self.scores)\ndef __getitem__(self, idx):\nitem = {key: torch.tensor(val[idx]) for key, val in self.inputs.items()}\nitem[‘labels’] = torch.tensor(self.scores[idx])\nreturn item\n# Create dataset\ndataset = MessageDataset(inputs, df[‘normalized_alcohol_score’])\n# Train model (in practice, use more data and proper training setup)\ntraining_args = TrainingArguments(\noutput_dir=“./results”,\nevaluation_strategy=“epoch”,\nper_device_train_batch_size=2,\nnum_train_epochs=1,\n)\ntrainer = Trainer(\nmodel=model,\nargs=training_args,\ntrain_dataset=dataset\n)\ntrainer.train()\n# Example: Predict on new messages\ndef predict_new_messages(new_messages):\ninputs = tokenize_and_encode(new_messages)\nwith torch.no_grad():\noutputs = model(**inputs)\nreturn torch.nn.functional.softmax(outputs.logits, dim=-1)\nnew_messages = [“I’m having a great time with some vodka and tequila”,\n“Just a normal chat without alcohol”]\npredictions = predict_new_messages(new_messages)\nprint(predictions)\nExtract and Add New Terms to LIWC Dictionary\n{r}\n# Sample Python output (in practice, use real model output)\nnew_terms_df &lt;- data.frame(\nmessage = c(“I’m having a great time with some vodka and tequila”,\n“Just a normal chat without alcohol”),\nprediction_score = c(0.8, 0.1)\n)\n# Filter messages with high prediction scores\nnew_alcohol_messages &lt;- new_terms_df %&gt;%\nfilter(prediction_score &gt; 0.5)\n# Extract new terms (simple tokenization example)\nnew_terms &lt;- new_alcohol_messages %&gt;%\nrowwise() %&gt;%\nmutate(new_terms = str_extract_all(message, “\\\\b\\\\w+\\\\b”)) %&gt;%\nunnest(new_terms) %&gt;%\nfilter(!new_terms %in% liwc_alcohol_terms) %&gt;%\npull(new_terms) %&gt;%\nunique()\n# Add new terms to LIWC dictionary (example)\nliwc_alcohol_terms &lt;- c(liwc_alcohol_terms, new_terms)\nprint(liwc_alcohol_terms)",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>tune_liwc.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "tune_liwc.html#fine-tuning-liwc-dictionaries",
+    "href": "tune_liwc.html#fine-tuning-liwc-dictionaries",
+    "title": "11  tune_liwc.qmd",
+    "section": "",
+    "text": "Identify Messages with LIWC Alcohol Terms: Use the LIWC dictionary to identify messages that contain alcohol-related words.\nCalculate Normalized Alcohol Scores: Compute normalized alcohol scores for these identified messages.\nUse BERT or LLM for Contextual Analysis: Train a model to identify similar messages that might contain new, relevant alcohol-related terms.\nExtract and Add New Terms: Extract new terms from these identified messages and add them to the LIWC dictionary.",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>tune_liwc.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "tune_emojis.html",
+    "href": "tune_emojis.html",
+    "title": "12  tune_emojis.qmd",
+    "section": "",
+    "text": "12.1 Emoji tuning\nWe can attempt to further tune emoji library by contextualizing emoji use within messages to infer meaning—\na. Could use eyeball sample to review sample of messages of most frequently used emoji and assign sentiment (either ranked by me, or as an average of the sentiment scores of all messages using the emoji in eyeball sample)\nb. Fine tune pretrained sentiment analysis model (e.g. VADER) on small subset of labeled msgs\nc. Semisupervised approach – Use a small labeled dataset to train a model and then apply it to a larger unlabeled dataset (e.g. other social media data source) to label additional examples. Refine the model iteratively with the new labeled examples.",
+    "crumbs": [
+      "Feature Engineering",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>tune_emojis.qmd</span>"
+    ]
   }
 ]
