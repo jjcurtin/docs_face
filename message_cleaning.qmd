@@ -12,7 +12,7 @@ Especially for short form communication
 
 From Hickman et al 2022: "—for instance, organizational researchers have provided four distinct recommendations for stemming during open vocabulary text mining: Always stem except on short documents (Kobayashi et al., 2018a), only stem in small corpora (Kern et al., 2016), only stem if it does not reduce classification/prediction accuracy (Kobayashi et al., 2018b), and cautiously consider stemming only after conducting topic modeling (Banks et al., 2018)."
 
-![](images/Screenshot 2024-08-29 110955.png)
+![](images/Screenshot%202024-08-29%20110955.png)
 
 ## Current preprocessing methods
 
@@ -66,6 +66,6 @@ Here are text cleaning considerations – ongoing with eda and feature engineeri
 
     ## Identifying need for differing preprocessing
 
-    ![](images/Screenshot 2024-08-29 111247.png)
+    ![](images/Screenshot%202024-08-29%20111247.png)
 
-![](images/Screenshot 2024-08-29 111303.png)
+![](images/Screenshot%202024-08-29%20111303.png)

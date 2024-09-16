@@ -1,0 +1,93 @@
+---
+title: "Meeting notes"
+format: html
+editor: visual
+---
+
+A place to compile notes after weekly meetings....not permanent, not organized.
+
+## 9/11/24
+
+Framework/base model overview
+
+LIWC: Just out of the box. Probably just one doc per person since thats LIWCs default
+
+No augmented dictionaries yet
+
+We need to explore still -
+
+-   Just outgoing? Sep feature for incoming vs outgoing
+
+-   Just frequent contacts?
+
+Many choices we will make doing formal comparisons in the inner loop of nested cv
+
+pros: more precise answer from 300 inner folds, more stable than eyeball
+
+cons: the more we use this, the less useful it is. Still ok since eval is in test
+
+Algorithm choice
+
+Just XGboost because it has been our labs top performer and we will use SHAP?
+
+Could explore in the beginning vs glmnet etxc
+
+Outcome
+
+Binary vs regression
+
+-   worry about homoscedascity o f errors/fanning out of errors as score increases
+
+-   Regression problems with zero inflated outcome – probably could use some zero inflated count or poisson? Need to check how to implement, if regularized versions exist, if tidyr can do
+
+-   XGboost can do both binary and continuous outcomes, but unclear how it would handle zero inflated regression
+
+-   We DEF need regularized since we will have lots of features
+
+-   Need to review and report to john on wednesday
+
+Goal for next week is to start batches
+
+-   make batches at model level, feature sets, stemming??
+
+-   Considered spell check but not now..maybe later
+
+-   Maybe resampling? Up2 down 1, up 1 down 1
+
+So for the eyeball sample, we should look at keeping all group messages and indidivdual messages from freqyuent contacts...c check if any low N group convos are party related befoer deciding to remove any group msgs
+
+When setting up training on CHTC
+
+make features
+
+-   Wide on features and feature types
+
+-   prefix: all incom/out X all important contacts x stem vs unstemmed
+
+-   suffix: LIWC category
+
+should i consider looking at eyeball for stemming questions?
+
+Preregistration
+
+Can prereg approach to evaluate model 1x inner 3x outer nested CV
+
+All decisions made within inner loop
+
+Relecant models evvaluated and comp outer fold
+
+comparison methods: baysian model comparison
+
+metric: auroc and secondary performance metrics
+
+CANT prereg
+
+exact models comparing
+
+generally to compare approaches in an iteraticve fashion compare LIWX with set of cateogires
+
+Alternatives clarified in inner loop
+
+Be clear about what else we will do
+
+finetuning using SHAP?

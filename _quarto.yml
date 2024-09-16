@@ -36,5 +36,7 @@ book:
         - llms.qmd
         - tune_liwc.qmd
         - tune_emojis.qmd
+    - meeting_notes.qmd
+    
 
     
