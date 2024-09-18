@@ -91,3 +91,37 @@ Alternatives clarified in inner loop
 Be clear about what else we will do
 
 finetuning using SHAP?
+
+-----
+
+9/18
+
+We will do regression PROBABLY
+
+Pending: Read on the validity of symptom counts indicating severity, that symptom counts would be meaningful to model
+
+For regression we will do:
+
+XGBoost – be able to say exactly how this handles zero inflated data
+
+and some poisson count data distribution
+
+best: Regularlized zero inflated poisson
+
+next: regularlized poisson
+
+worst: non regularilized zero inflated poisson (for sure exists)
+
+Can also check negative binomial? and can check in GLM package for regularilized versions of zero inflated models
+
+Need to generate LIWC file for everyone
+
+feature file has one row per participant.
+
+Has THREE sets of LIWC features: all, incoming, outgoing). But our models will either use just all, or incoming +outgoing, (or maybe even just outgoing??)
+
+Can consider seperating out important people. If messages to top N most frequent contacts have substance words
+
+We should uise mean or median absolute squared error instead of RMSE
+
+Look at distribution of errors — if normal use mean, if not median
