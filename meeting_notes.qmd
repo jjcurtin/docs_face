@@ -92,7 +92,7 @@ Be clear about what else we will do
 
 finetuning using SHAP?
 
------
+------------------------------------------------------------------------
 
 9/18
 
@@ -106,7 +106,9 @@ XGBoost – be able to say exactly how this handles zero inflated data
 
 and some poisson count data distribution
 
-best: Regularlized zero inflated poisson
+best: Regularlized zero inflated poisson:
+
+<https://parsnip.tidymodels.org/reference/details_poisson_reg_zeroinfl.html>
 
 next: regularlized poisson
 
